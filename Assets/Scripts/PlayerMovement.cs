@@ -6,9 +6,11 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] float speed = 10f;
 
 	Rigidbody2D rb;
+	Animator myAnimator;
 
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
+		myAnimator = GetComponent<Animator>();
 	}
 
     float getDelta() {
@@ -16,7 +18,9 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void move() {
+		float delta = getDelta();
 		rb.velocity = new Vector2(getDelta(), rb.velocity.y);
+		myAnimator.SetBool("Running", delta != 0);
     }
 
 	void updateOrientation() {
