@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Actors
+  - Platforms
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 487120943
+    locked: 0
+  - name: Actors
+    uniqueID: 668476057
     locked: 0
