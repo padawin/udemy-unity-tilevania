@@ -55,7 +55,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737894317023786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 4.23, z: 0}
+  m_LocalPosition: {x: -9.71, y: 4.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4891690794782078}
@@ -133,7 +133,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &70943329073591914
 CapsuleCollider2D:
@@ -186,7 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50390216148b3074a87c08a3750b2822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 300
+  jumpInitialVelocity: 6
 --- !u!212 &212121896459523896
 SpriteRenderer:
   m_ObjectHideFlags: 1

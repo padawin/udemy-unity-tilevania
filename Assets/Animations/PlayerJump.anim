@@ -74,4 +74,12 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.25
+    functionName: jumpDownEvent
+    data: 
+    objectReferenceParameter: {fileID: 1737894317023786, guid: d6265d8c13fb1414da59637f46eeb39c,
+      type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
