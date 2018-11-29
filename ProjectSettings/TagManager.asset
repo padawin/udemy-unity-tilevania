@@ -47,9 +47,12 @@ TagManager:
   - name: Decoration
     uniqueID: 754627405
     locked: 0
-  - name: Foreground
-    uniqueID: 487120943
-    locked: 0
   - name: Actors
     uniqueID: 668476057
+    locked: 0
+  - name: Ground
+    uniqueID: 1909016737
+    locked: 0
+  - name: Foreground
+    uniqueID: 487120943
     locked: 0
