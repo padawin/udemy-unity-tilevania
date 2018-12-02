@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
-  jumpInitialVelocity: 9
+  jumpInitialVelocity: 10
   minVerticalSpeedToJump: 0.02
 --- !u!212 &212121896459523896
 SpriteRenderer:
