@@ -16,8 +16,8 @@ TagManager:
   - Actors
   - Platforms
   - ViewEdge
-  - 
-  - 
+  - Player
+  - Fog
   - 
   - 
   - 
@@ -55,4 +55,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 487120943
+    locked: 0
+  - name: Fog
+    uniqueID: 3123817055
     locked: 0
