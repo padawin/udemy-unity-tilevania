@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Lift : MonoBehaviour {
-	Rigidbody2D rb;
 	[SerializeField] float speed = 5f;
 	[SerializeField] float minY;
 	[SerializeField] float maxY;
 	bool playerOnIt = false;
-
-	void Start() {
-		rb = GetComponent<Rigidbody2D>();
-	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		playerOnIt = true;
