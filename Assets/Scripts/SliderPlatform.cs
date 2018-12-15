@@ -10,7 +10,6 @@ public class SliderPlatform : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D collider) {
 		myCollider = collider;
-		Debug.Log(myCollider);
 	}
 
 	void OnCollisionExit2D(Collision2D collider) {
