@@ -6,13 +6,13 @@ public class SliderPlatform : MonoBehaviour {
 	[SerializeField] float speed = 5f;
 	[SerializeField] float minX;
 	[SerializeField] float maxX;
-	Collision2D myCollider = null;
+	Collider2D myCollider = null;
 
-	void OnCollisionEnter2D(Collision2D collider) {
+	void OnTriggerEnter2D(Collider2D collider) {
 		myCollider = collider;
 	}
 
-	void OnCollisionExit2D(Collision2D collider) {
+	void OnTriggerExit2D(Collider2D collider) {
 		myCollider = null;
 	}
 
