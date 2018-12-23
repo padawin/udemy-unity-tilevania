@@ -5,16 +5,12 @@ using UnityEngine;
 public class Activator : MonoBehaviour {
 	bool canActivate = false;
 
-	[SerializeField] GameObject activatorStateA;
-	[SerializeField] GameObject activatorStateB;
-	[SerializeField] GameObject objectStateA;
-	[SerializeField] GameObject objectStateB;
+	[SerializeField] GameObject[] activatorsStates;
 
 	void toggle () {
-		activatorStateA.SetActive(!activatorStateA.activeSelf);
-		activatorStateB.SetActive(!activatorStateB.activeSelf);
-		objectStateA.SetActive(!objectStateA.activeSelf);
-		objectStateB.SetActive(!objectStateB.activeSelf);
+		foreach (var activator in activatorsStates) {
+			activator.SetActive(!activator.activeSelf);
+		}
 	}
 
 	void OnTriggerEnter2D() {
