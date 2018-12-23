@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Activator : MonoBehaviour {
-	bool canActivate = false;
+	bool playerTouches = false;
+	bool canUse = true;
 
+	[SerializeField] bool infiniteUse = true;
 	[SerializeField] GameObject[] activatorsStates;
 
 	void toggle () {
@@ -14,19 +16,24 @@ public class Activator : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D() {
-		canActivate = true;
+		if (canUse) {
+			playerTouches = true;
+		}
 	}
 
 	void OnTriggerExit2D() {
-		canActivate = false;
+		if (canUse) {
+			playerTouches = false;
+		}
 	}
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Submit")) {
-			if (canActivate) {
-				toggle();
+		if (canUse && playerTouches && Input.GetButtonDown("Submit")) {
+			if (!infiniteUse) {
+				canUse = false;
 			}
+			toggle();
 		}
 	}
 }
