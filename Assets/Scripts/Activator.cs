@@ -8,10 +8,20 @@ public class Activator : MonoBehaviour {
 
 	[SerializeField] bool infiniteUse = true;
 	[SerializeField] GameObject[] activatorsStates;
+	[SerializeField] ActivatorObserver[] observers;
+
+	void Start() {
+		foreach (var observer in observers) {
+			observer.register();
+		}
+	}
 
 	void toggle () {
 		foreach (var activator in activatorsStates) {
 			activator.SetActive(!activator.activeSelf);
+		}
+		foreach (var observer in observers) {
+			observer.activate();
 		}
 	}
 
