@@ -19,14 +19,16 @@ public class PlayerMovement : MonoBehaviour {
 		return Input.GetAxis("Horizontal") * Time.deltaTime * speed;
 	}
 
+	void OnCollisionEnter2D(Collision2D collider) {
+		myAnimator.SetBool("Jumping", false);
+	}
+
 	void jump() {
 		if (Mathf.Abs(rb.velocity.y) > minVerticalSpeedToJump) {
 			return;
 		}
 
 		rb.gravityScale = 1f;
-		myAnimator.SetBool("Jumping", false);
-
 		if (Input.GetButtonDown("Jump")) {
 			rb.velocity = new Vector2(rb.velocity.x, jumpInitialVelocity);
 			myAnimator.SetBool("Jumping", true);
