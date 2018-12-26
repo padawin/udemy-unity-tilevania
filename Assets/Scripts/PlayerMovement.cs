@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
-    [SerializeField] float speed = 300f;
-    [SerializeField] float jumpInitialVelocity = 10f;
+	[SerializeField] float speed = 300f;
+	[SerializeField] float jumpInitialVelocity = 10f;
 
 	Rigidbody2D rb;
 	Animator myAnimator;
@@ -14,9 +14,9 @@ public class PlayerMovement : MonoBehaviour {
 		myAnimator = GetComponent<Animator>();
 	}
 
-    float getDelta() {
-        return Input.GetAxis("Horizontal") * Time.deltaTime * speed;
-    }
+	float getDelta() {
+		return Input.GetAxis("Horizontal") * Time.deltaTime * speed;
+	}
 
 	void jump() {
 		if (Mathf.Abs(rb.velocity.y) > Mathf.Epsilon) {
@@ -36,11 +36,11 @@ public class PlayerMovement : MonoBehaviour {
 		rb.gravityScale = 2f;
 	}
 
-    void move() {
+	void move() {
 		float delta = getDelta();
 		rb.velocity = new Vector2(getDelta(), rb.velocity.y);
 		myAnimator.SetBool("Running", delta != 0);
-    }
+	}
 
 	void updateOrientation() {
 		float direction = Mathf.Sign(rb.velocity.x);
@@ -52,12 +52,12 @@ public class PlayerMovement : MonoBehaviour {
 			transform.localScale.y,
 			transform.localScale.z
 		);
-    }
+	}
 
-    // Update is called once per frame
-    void Update() {
-        move();
+	// Update is called once per frame
+	void Update() {
+		move();
 		jump();
-        updateOrientation();
-    }
+		updateOrientation();
+	}
 }
