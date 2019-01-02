@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collider) {
-		myAnimator.SetBool("Jumping", false);
+		myAnimator.SetBool("Falling", false);
 	}
 
 	void jump() {
@@ -35,8 +35,15 @@ public class PlayerMovement : MonoBehaviour {
 		}
 	}
 
-	void jumpDownEvent() {
-		rb.gravityScale = 2f;
+	void fall() {
+		if (rb.velocity.y < 0 && !myAnimator.GetBool("Falling")) {
+			if (myAnimator.GetBool("Jumping")) {
+				rb.gravityScale = 2.5f;
+			}
+			myAnimator.SetBool("Jumping", false);
+			myAnimator.SetBool("Running", false);
+			myAnimator.SetBool("Falling", true);
+		}
 	}
 
 	void move() {
@@ -61,6 +68,7 @@ public class PlayerMovement : MonoBehaviour {
 	void Update() {
 		move();
 		jump();
+		fall();
 		updateOrientation();
 	}
 }
