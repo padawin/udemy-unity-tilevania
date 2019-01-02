@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 	[SerializeField] float speed = 300f;
 	[SerializeField] float jumpInitialVelocity = 10f;
+	[SerializeField] float minVerticalSpeedToJump = Mathf.Epsilon;
 
 	Rigidbody2D rb;
 	Animator myAnimator;
@@ -19,7 +20,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void jump() {
-		if (Mathf.Abs(rb.velocity.y) > Mathf.Epsilon) {
+		if (Mathf.Abs(rb.velocity.y) > minVerticalSpeedToJump) {
 			return;
 		}
 
