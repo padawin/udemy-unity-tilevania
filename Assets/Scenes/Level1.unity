@@ -54297,11 +54297,11 @@ Prefab:
       objectReference: {fileID: 1436807576}
     - target: {fileID: 4701801792741662, guid: 82aa1f992f1214df5b832dfdb8bdf900, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -134.35721
+      value: -126.09456
       objectReference: {fileID: 0}
     - target: {fileID: 4701801792741662, guid: 82aa1f992f1214df5b832dfdb8bdf900, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.9769263
+      value: -4.9344993
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82aa1f992f1214df5b832dfdb8bdf900, type: 2}
@@ -124562,8 +124562,7 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -15.306988, y: 27.244888}
       - {x: -15.013584, y: -29.89168}
-      - {x: 149.00948, y: -30.08117}
-      - {x: 164.49136, y: -15.315714}
+      - {x: 164.34698, y: -30.064318}
       - {x: 164.55812, y: 27.13581}
 --- !u!4 &949773247
 Transform:
