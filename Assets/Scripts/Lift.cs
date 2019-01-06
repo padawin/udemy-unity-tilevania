@@ -6,21 +6,25 @@ public class Lift : MonoBehaviour {
 	[SerializeField] float speed = 5f;
 	[SerializeField] float minY;
 	[SerializeField] float maxY;
-	bool playerOnIt = false;
+	Collider2D myCollider = null;
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		playerOnIt = true;
+		myCollider = collider;
 	}
 
 	void OnTriggerExit2D(Collider2D collider) {
-		playerOnIt = false;
+		myCollider = null;
 	}
 
 	void Update() {
 		float newPosY = transform.position.y;
-		if (playerOnIt) {
+		if (myCollider != null) {
 			if (transform.position.y < maxY) {
 				newPosY = transform.position.y + Time.deltaTime * speed;
+				myCollider.transform.position = new Vector2(
+					myCollider.transform.position.x,
+					myCollider.transform.position.y + Time.deltaTime * speed
+				);
 			}
 		}
 		else if (transform.position.y > minY) {
