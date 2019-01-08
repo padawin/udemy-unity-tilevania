@@ -13,6 +13,7 @@ public class EnemyBackForthMovement : MonoBehaviour {
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
 		target = maxX;
+		updateOrientation();
 	}
 
 	void Update () {
