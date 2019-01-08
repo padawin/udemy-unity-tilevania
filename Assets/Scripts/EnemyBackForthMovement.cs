@@ -9,9 +9,11 @@ public class EnemyBackForthMovement : MonoBehaviour {
 	float target;
 
 	Rigidbody2D rb;
+	Animator myAnimator;
 
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
+		myAnimator = GetComponent<Animator>();
 		target = maxX;
 		updateOrientation();
 	}
@@ -43,11 +45,6 @@ public class EnemyBackForthMovement : MonoBehaviour {
 	}
 
 	void updateOrientation() {
-		float direction = Mathf.Sign(transform.position.x - target);
-		transform.localScale = new Vector3(
-			direction,
-			transform.localScale.y,
-			transform.localScale.z
-		);
+		myAnimator.SetTrigger("Turns");
 	}
 }
