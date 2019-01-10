@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBackForthMovement : MonoBehaviour {
+	[SerializeField] int defaultDirection;
 	[SerializeField] float speed = 100f;
 	[SerializeField] float minX;
 	[SerializeField] float maxX;
