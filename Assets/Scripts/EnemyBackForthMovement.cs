@@ -9,17 +9,17 @@ public class EnemyBackForthMovement : MonoBehaviour {
 	[SerializeField] float maxX;
 	float target;
 
-	Rigidbody2D rb;
+	protected Rigidbody2D rb;
 	Animator myAnimator;
 
-	void Start() {
+	protected void Start() {
 		rb = GetComponent<Rigidbody2D>();
 		myAnimator = GetComponent<Animator>();
 		target = maxX;
 		updateOrientation();
 	}
 
-	void Update () {
+	protected void Update () {
 		moveTowardTarget();
 		if (turnAround()) {
 			updateOrientation();
