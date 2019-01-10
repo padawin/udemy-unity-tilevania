@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyBackForthMovement : MonoBehaviour {
 	[SerializeField] int defaultDirection;
-	[SerializeField] float speed = 100f;
+	[SerializeField] float xSpeed = 100f;
 	[SerializeField] float minX;
 	[SerializeField] float maxX;
 	float target;
@@ -29,7 +29,7 @@ public class EnemyBackForthMovement : MonoBehaviour {
 	void moveTowardTarget() {
 		float direction = Mathf.Sign(target - transform.position.x);
 		rb.velocity = new Vector2(
-			direction * speed * Time.deltaTime, rb.velocity.y
+			direction * xSpeed * Time.deltaTime, rb.velocity.y
 		);
 	}
 
