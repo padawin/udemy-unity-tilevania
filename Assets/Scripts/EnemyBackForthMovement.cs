@@ -28,7 +28,9 @@ public class EnemyBackForthMovement : MonoBehaviour {
 
 	void moveTowardTarget() {
 		float direction = Mathf.Sign(target - transform.position.x);
-		rb.velocity = new Vector2(direction * speed * Time.deltaTime, 0f);
+		rb.velocity = new Vector2(
+			direction * speed * Time.deltaTime, rb.velocity.y
+		);
 	}
 
 	bool turnAround() {
