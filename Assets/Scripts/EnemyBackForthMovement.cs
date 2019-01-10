@@ -32,7 +32,7 @@ public class EnemyBackForthMovement : MonoBehaviour {
 	}
 
 	bool turnAround() {
-		if (transform.position.x >= minX && transform.position.x <= maxX) {
+		if (minX <= transform.position.x && transform.position.x <= maxX) {
 			return false;
 		}
 
