@@ -46,6 +46,14 @@ public class EnemyBackForthMovement : MonoBehaviour {
 	}
 
 	void updateOrientation() {
-		myAnimator.SetTrigger("Turns");
+		float direction = Mathf.Sign(defaultDirection) * Mathf.Sign(transform.position.x - target);
+		transform.localScale = new Vector3(
+			direction,
+			transform.localScale.y,
+			transform.localScale.z
+		);
+		if (myAnimator != null) {
+			myAnimator.SetTrigger("Turns");
+		}
 	}
 }
