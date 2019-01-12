@@ -10,6 +10,8 @@ public class NextLevel : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		sceneLoader.loadNextScene();
+		if (collider.gameObject.name == "Player") {
+			sceneLoader.loadNextScene();
+		}
 	}
 }
