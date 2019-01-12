@@ -33,14 +33,16 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void handleInput() {
-		if (
+		if (Input.GetButtonDown("Jump") && canJump()) {
+			startJump();
+		}
+	}
+
+	bool canJump() {
+		return (
 			!myAnimator.GetBool("Jumping") && !myAnimator.GetBool("Falling")
 			|| gameSession.playerHasBonus("DoubleJump") && jumpsCount < maxJumps
-		) {
-			if (Input.GetButtonDown("Jump")) {
-				startJump();
-			}
-		}
+		);
 	}
 
 	void startJump() {
