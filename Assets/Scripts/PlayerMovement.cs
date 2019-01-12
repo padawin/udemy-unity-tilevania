@@ -6,12 +6,17 @@ public class PlayerMovement : MonoBehaviour {
 	[SerializeField] float speed = 300f;
 	[SerializeField] float jumpInitialVelocity = 10f;
 
+	int jumpsCount = 0;
+	int maxJumps = 2;
+
 	Rigidbody2D rb;
 	Animator myAnimator;
+	GameSession gameSession;
 
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
 		myAnimator = GetComponent<Animator>();
+		gameSession = FindObjectOfType<GameSession>();
 	}
 
 	// Update is called once per frame
@@ -28,16 +33,24 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void handleInput() {
-		if (!myAnimator.GetBool("Jumping") && !myAnimator.GetBool("Falling")) {
-			if (Input.GetButtonDown("Jump")) {
-				startJump();
-			}
+		if (Input.GetButtonDown("Jump") && canJump()) {
+			startJump();
 		}
 	}
 
+	bool canJump() {
+		return (
+			!myAnimator.GetBool("Jumping") && !myAnimator.GetBool("Falling")
+			|| gameSession.playerHasBonus("DoubleJump") && jumpsCount < maxJumps
+		);
+	}
+
 	void startJump() {
+		rb.gravityScale = 1f;
 		rb.velocity = new Vector2(rb.velocity.x, jumpInitialVelocity);
+		myAnimator.SetBool("Falling", false);
 		myAnimator.SetBool("Jumping", true);
+		jumpsCount++;
 	}
 
 	void move() {
@@ -73,6 +86,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (rb.velocity.y > -Mathf.Epsilon) {
 			rb.gravityScale = 1f;
 			myAnimator.SetBool("Falling", false);
+			jumpsCount = 0;
 		}
 	}
 
