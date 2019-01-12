@@ -39,6 +39,7 @@ public class CastleEntranceKnight : MonoBehaviour {
 	void Update() {
 		if (!isDashing) {
 			if (seesPlayer) {
+				changeBreath(1f);
 				turnToward(player);
 				StartCoroutine(dash());
 			}
@@ -60,12 +61,15 @@ public class CastleEntranceKnight : MonoBehaviour {
 
 	void turnToward(GameObject player) {
 		direction = Mathf.Sign(player.transform.position.x - transform.position.x);
+		transform.localScale = new Vector3(
+			-direction, transform.localScale.y, transform.localScale.z
+		);
 	}
 
 	IEnumerator dash() {
 		yield return new WaitForSeconds(timeBeforeDash);
 		if (seesPlayer) {
-			myAnimator.SetTrigger("Dashes");
+			myAnimator.SetBool("Dashes", true);
 			isDashing = true;
 		}
 	}
@@ -80,7 +84,16 @@ public class CastleEntranceKnight : MonoBehaviour {
 	IEnumerator stopDashing() {
 		rb.velocity = new Vector2(0f, 0f);
 		isDashing = false;
-		myAnimator.SetTrigger("StopsDashing");
+		myAnimator.SetBool("Dashes", false);
 		yield return new WaitForSeconds(timeBeforeStandby);
+	}
+
+	/**
+	 * Animation hook
+	 */
+	void changeBreath(float size) {
+		transform.localScale = new Vector3(
+			transform.localScale.x, size, transform.localScale.z
+		);
 	}
 }
