@@ -46,7 +46,9 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void startJump() {
+		rb.gravityScale = 1f;
 		rb.velocity = new Vector2(rb.velocity.x, jumpInitialVelocity);
+		myAnimator.SetBool("Falling", false);
 		myAnimator.SetBool("Jumping", true);
 		jumpsCount++;
 	}
