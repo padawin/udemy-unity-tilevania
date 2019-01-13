@@ -39,7 +39,6 @@ public class CastleEntranceKnight : MonoBehaviour {
 	void Update() {
 		if (!isDashing) {
 			if (seesPlayer) {
-				changeBreath(1f);
 				turnToward(player);
 				StartCoroutine(dash());
 			}
@@ -86,14 +85,5 @@ public class CastleEntranceKnight : MonoBehaviour {
 		isDashing = false;
 		myAnimator.SetBool("Dashes", false);
 		yield return new WaitForSeconds(timeBeforeStandby);
-	}
-
-	/**
-	 * Animation hook
-	 */
-	void changeBreath(float size) {
-		transform.localScale = new Vector3(
-			transform.localScale.x, size, transform.localScale.z
-		);
 	}
 }

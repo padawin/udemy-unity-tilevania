@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 50945776977435608}
   - component: {fileID: 114746155586680180}
   - component: {fileID: 95837421067346024}
+  - component: {fileID: 114262596521149786}
   m_Layer: 8
   m_Name: CastleGuard
   m_TagString: Untagged
@@ -119,10 +120,21 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114262596521149786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590702352838028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5f7210b393c47d7b301da9e75b7473, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &114746155586680180
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -132,8 +144,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09dc4e110ac1b4fc5bcdaca486651a4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   timeBeforeDash: 1.5
   timeBeforeStandby: 1
   dashSpeed: 250

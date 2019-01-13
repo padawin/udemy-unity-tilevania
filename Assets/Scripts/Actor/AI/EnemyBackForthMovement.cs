@@ -54,8 +54,5 @@ public class EnemyBackForthMovement : MonoBehaviour {
 			transform.localScale.y,
 			transform.localScale.z
 		);
-		if (myAnimator != null) {
-			myAnimator.SetTrigger("Turns");
-		}
 	}
 }
