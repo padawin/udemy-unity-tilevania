@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 95890963696287184}
   - component: {fileID: 60012687996122420}
   - component: {fileID: 114346263565571964}
+  - component: {fileID: 114376131769131292}
+  - component: {fileID: 114461514541373594}
   m_Layer: 8
   m_Name: Bat
   m_TagString: Untagged
@@ -141,8 +143,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fce47c3501034d6e9dda8798e17728d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitbox: {fileID: 60012687996122420}
   damages: 3
+--- !u!114 &114376131769131292
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275694239369234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8003f04079a4d4996037e56306f46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthInitial: 10
+  invincibilityDuration: 1
+--- !u!114 &114461514541373594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275694239369234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3417a2d5f27fb4dc492593f813eac2bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212131248244066432
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 114746155586680180}
   - component: {fileID: 95837421067346024}
   - component: {fileID: 114262596521149786}
+  - component: {fileID: 114796007224431190}
+  - component: {fileID: 114459304123389332}
   m_Layer: 8
   m_Name: CastleGuard
   m_TagString: Untagged
@@ -191,6 +193,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5f7210b393c47d7b301da9e75b7473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114459304123389332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590702352838028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3417a2d5f27fb4dc492593f813eac2bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114614212239401450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,6 +232,19 @@ MonoBehaviour:
   dashSpeed: 250
   dashBoundaryLeft: 0
   dashBoundaryRight: 0
+--- !u!114 &114796007224431190
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590702352838028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8003f04079a4d4996037e56306f46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthInitial: 200
+  invincibilityDuration: 1
 --- !u!212 &212244308000789186
 SpriteRenderer:
   m_ObjectHideFlags: 1

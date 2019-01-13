@@ -27,6 +27,8 @@ GameObject:
   - component: {fileID: 114685291267364958}
   - component: {fileID: 114767550188556082}
   - component: {fileID: 114974888234340304}
+  - component: {fileID: 114098253939216316}
+  - component: {fileID: 114300542126180362}
   m_Layer: 8
   m_Name: RedMushroom
   m_TagString: Untagged
@@ -94,8 +96,7 @@ PolygonCollider2D:
     - - {x: -0.18664551, y: 1}
       - {x: -0.6923218, y: 0.60382843}
       - {x: -0.6923218, y: -0.6356621}
-      - {x: -0.38504028, y: -1}
-      - {x: 0.5727768, y: -1}
+      - {x: 0.59088135, y: -0.61266327}
       - {x: 0.6140976, y: 0.2504654}
       - {x: 0.6193161, y: 0.7394943}
       - {x: 0.11394501, y: 1.0104332}
@@ -142,6 +143,30 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114098253939216316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812610847498954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8003f04079a4d4996037e56306f46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthInitial: 40
+  invincibilityDuration: 1
+--- !u!114 &114300542126180362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812610847498954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3417a2d5f27fb4dc492593f813eac2bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114685291267364958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,7 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fce47c3501034d6e9dda8798e17728d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitbox: {fileID: 60005027387555888}
   damages: 10
 --- !u!114 &114974888234340304
 MonoBehaviour:
