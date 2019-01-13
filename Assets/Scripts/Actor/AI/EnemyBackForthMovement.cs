@@ -10,11 +10,9 @@ public class EnemyBackForthMovement : MonoBehaviour {
 	float target;
 
 	protected Rigidbody2D rb;
-	Animator myAnimator;
 
 	protected void Start() {
 		rb = GetComponent<Rigidbody2D>();
-		myAnimator = GetComponent<Animator>();
 		target = maxX;
 		updateOrientation();
 	}
@@ -39,11 +37,6 @@ public class EnemyBackForthMovement : MonoBehaviour {
 		}
 
 		target = target == maxX ? minX : maxX;
-		transform.position = new Vector2(
-			Mathf.Clamp(transform.position.x, minX, maxX),
-			transform.position.y
-		);
-
 		return true;
 	}
 

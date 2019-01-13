@@ -12,8 +12,10 @@ public class PlayerMovement : MonoBehaviour {
 	Rigidbody2D rb;
 	Animator myAnimator;
 	GameSession gameSession;
+	Player player;
 
 	void Start() {
+		player = GetComponent<Player>();
 		rb = GetComponent<Rigidbody2D>();
 		myAnimator = GetComponent<Animator>();
 		gameSession = FindObjectOfType<GameSession>();
@@ -21,6 +23,9 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
+		if (player.isBlocked()) {
+			return;
+		}
 		handleInput();
 		move();
 		jump();
