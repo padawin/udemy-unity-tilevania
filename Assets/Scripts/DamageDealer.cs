@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageDealer : MonoBehaviour {
-	[SerializeField] Collider2D hitbox;
 	[SerializeField] int damages = 10;
+
+	void OnTriggerEnter2D(Collider2D collider) {
+		if (collider.name != "Player") {
+			return;
+		}
+		ActorHealth health= collider.GetComponent<ActorHealth>();
+		health.hit(this);
+	}
 
 	public int getDamages() {
 		return damages;
-	}
-
-	public Collider2D getHitbox() {
-		return hitbox;
 	}
 }

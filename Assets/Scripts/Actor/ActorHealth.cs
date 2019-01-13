@@ -39,17 +39,8 @@ public class ActorHealth : MonoBehaviour {
 
 	public void hit(DamageDealer damageDealer) {
 		health -= damageDealer.getDamages();
-	}
-
-	void OnTriggerEnter2D(Collider2D collider) {
-		DamageDealer damageDealer = collider.GetComponent<DamageDealer>();
-		if (damageDealer == null || collider != damageDealer.getHitbox()) {
-			return;
-		}
-
-		hit(damageDealer);
 		if (hitResponse != null) {
-			hitResponse.run(collider.gameObject);
+			hitResponse.run(damageDealer.gameObject);
 		}
 	}
 
