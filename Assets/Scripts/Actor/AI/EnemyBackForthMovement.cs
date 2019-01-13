@@ -10,11 +10,9 @@ public class EnemyBackForthMovement : MonoBehaviour {
 	float target;
 
 	protected Rigidbody2D rb;
-	Animator myAnimator;
 
 	protected void Start() {
 		rb = GetComponent<Rigidbody2D>();
-		myAnimator = GetComponent<Animator>();
 		target = maxX;
 		updateOrientation();
 	}
