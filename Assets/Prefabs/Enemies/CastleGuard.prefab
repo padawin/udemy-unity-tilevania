@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114746155586680180}
   - component: {fileID: 95837421067346024}
   - component: {fileID: 114262596521149786}
+  - component: {fileID: 114208261643206628}
   m_Layer: 8
   m_Name: CastleGuard
   m_TagString: Untagged
@@ -135,6 +136,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5f7210b393c47d7b301da9e75b7473, type: 3}
   m_Name:
   m_EditorClassIdentifier:
+--- !u!114 &114208261643206628
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590702352838028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fce47c3501034d6e9dda8798e17728d, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  damages: 40
 --- !u!114 &114746155586680180
 MonoBehaviour:
   m_ObjectHideFlags: 1
