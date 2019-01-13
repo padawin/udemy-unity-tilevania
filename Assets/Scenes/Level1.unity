@@ -125086,6 +125086,21 @@ Prefab:
       propertyPath: maxY
       value: 0.99
       objectReference: {fileID: 0}
+    - target: {fileID: 114685291267364958, guid: bcfb4701f105a445aa90d0dfe3a63f84,
+        type: 2}
+      propertyPath: xSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685291267364958, guid: bcfb4701f105a445aa90d0dfe3a63f84,
+        type: 2}
+      propertyPath: minX
+      value: 105.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685291267364958, guid: bcfb4701f105a445aa90d0dfe3a63f84,
+        type: 2}
+      propertyPath: maxX
+      value: 116.85
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcfb4701f105a445aa90d0dfe3a63f84, type: 2}
   m_IsPrefabAsset: 0
