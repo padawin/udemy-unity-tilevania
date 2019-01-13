@@ -7,7 +7,7 @@ public class ActorHealth : MonoBehaviour {
 	[SerializeField] float invincibilityDuration = 0f;
 
 	int maxHealth;
-	[SerializeField] int health;
+	int health;
 	float timeSinceLastHit = 0f;
 
 	HitResponse hitResponse;

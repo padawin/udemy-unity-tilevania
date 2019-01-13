@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
-	[SerializeField] Collider2D hitbox;
-
-	Rigidbody2D rb;
 	Animator myAnimator;
-	GameSession gameSession;
 	Player player;
 
 	void Start() {
