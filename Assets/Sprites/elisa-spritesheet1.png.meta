@@ -19,6 +19,13 @@ TextureImporter:
     21300028: elisa-spritesheet1_14
     21300030: elisa-spritesheet1_15
     21300032: elisa-spritesheet1_16
+    21300034: elisa-spritesheet1_17
+    21300036: elisa-spritesheet1_18
+    21300038: elisa-spritesheet1_19
+    21300040: elisa-spritesheet1_20
+    21300042: elisa-spritesheet1_21
+    21300044: elisa-spritesheet1_22
+    21300046: elisa-spritesheet1_23
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -440,13 +447,133 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 51c2e5a95ac3145d9a942851635d3290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elisa-spritesheet1_17
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 445
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a07036d4dc4e4564aabd34ee550cf8a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elisa-spritesheet1_18
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 445
+        width: 19
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f69c2576ac634cc0b5566aedd5cb25b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elisa-spritesheet1_19
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 445
+        width: 20
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5130623, y: 0.56939495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a7294531932849e4b58648eea043a53
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elisa-spritesheet1_20
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 445
+        width: 37
+        height: 30
+      alignment: 9
+      pivot: {x: 0.33894143, y: 0.56441754}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e235defb6507e4d0e97fda9cf85b20b4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elisa-spritesheet1_21
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 445
+        width: 50
+        height: 29
+      alignment: 9
+      pivot: {x: 0.44284058, y: 0.5444967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c432b696525d444faa62ff9ca59e251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: elisa-spritesheet1_23
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 445
+        width: 33
+        height: 30
+      alignment: 9
+      pivot: {x: 0.65295964, y: 0.54501444}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89a20c05112b448d6aabb348ade1f110
       vertices: []
       indices: 
       edges: []

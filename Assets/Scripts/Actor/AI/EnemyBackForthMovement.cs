@@ -37,11 +37,6 @@ public class EnemyBackForthMovement : MonoBehaviour {
 		}
 
 		target = target == maxX ? minX : maxX;
-		transform.position = new Vector2(
-			Mathf.Clamp(transform.position.x, minX, maxX),
-			transform.position.y
-		);
-
 		return true;
 	}
 

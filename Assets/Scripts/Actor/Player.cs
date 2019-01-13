@@ -1,16 +1,20 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
+	bool blocked = false;
 
-	// Use this for initialization
-	void Start () {
-		
+	/* For external interaction, eg. when being hit */
+	public void block() {
+		blocked = true;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void unblock() {
+		blocked = false;
+	}
+
+	public bool isBlocked() {
+		return blocked;
 	}
 }

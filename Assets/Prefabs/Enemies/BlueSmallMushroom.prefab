@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 70255886975382564}
   - component: {fileID: 114704562308763466}
   - component: {fileID: 114790882781965384}
+  - component: {fileID: 114894563306057646}
+  - component: {fileID: 114689415560752250}
   m_Layer: 8
   m_Name: BlueSmallMushroom
   m_TagString: Untagged
@@ -39,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1526097371075106}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 62.294376, y: -46.139343, z: -0.16037488}
+  m_LocalPosition: {x: 80.01431, y: -36.70512, z: -0.16037488}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,9 +104,20 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.010196686, y: 0}
-  m_Size: {x: 0.8735657, y: 1}
+  m_Offset: {x: -0.010196686, y: 0.05721283}
+  m_Size: {x: 0.8735657, y: 0.88557434}
   m_Direction: 0
+--- !u!114 &114689415560752250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526097371075106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3417a2d5f27fb4dc492593f813eac2bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114704562308763466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -133,8 +146,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fce47c3501034d6e9dda8798e17728d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitbox: {fileID: 70255886975382564}
   damages: 5
+--- !u!114 &114894563306057646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526097371075106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8003f04079a4d4996037e56306f46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthInitial: 20
+  invincibilityDuration: 1
 --- !u!212 &212841590418171386
 SpriteRenderer:
   m_ObjectHideFlags: 1

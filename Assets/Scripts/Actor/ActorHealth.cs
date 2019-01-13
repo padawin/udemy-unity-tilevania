@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ActorHealth : MonoBehaviour {
 	[SerializeField] int maxHealthInitial = 100;
+	[SerializeField] float invincibilityDuration = 0f;
+
 	int maxHealth;
-	[SerializeField] int health;
+	int health;
+	float timeSinceLastHit = 0f;
 
 	HitResponse hitResponse;
 
@@ -39,17 +42,9 @@ public class ActorHealth : MonoBehaviour {
 
 	public void hit(DamageDealer damageDealer) {
 		health -= damageDealer.getDamages();
-	}
-
-	void OnTriggerEnter2D(Collider2D collider) {
-		DamageDealer damageDealer = collider.GetComponent<DamageDealer>();
-		if (damageDealer == null || collider != damageDealer.getHitbox()) {
-			return;
-		}
-
-		hit(damageDealer);
+		timeSinceLastHit = Time.realtimeSinceStartup;
 		if (hitResponse != null) {
-			hitResponse.run(collider.gameObject);
+			hitResponse.run(damageDealer.gameObject);
 		}
 	}
 
@@ -59,5 +54,9 @@ public class ActorHealth : MonoBehaviour {
 
 	public int getMaxHealth() {
 		return maxHealth;
+	}
+
+	public bool canBeHit() {
+		return Time.realtimeSinceStartup - timeSinceLastHit >= invincibilityDuration;
 	}
 }
