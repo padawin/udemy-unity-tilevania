@@ -149,8 +149,8 @@ MonoBehaviour:
   timeBeforeDash: 1.5
   timeBeforeStandby: 1
   dashSpeed: 250
-  dashBoundaryLeft: 151.2
-  dashBoundaryRight: 158.89
+  dashBoundaryLeft: 0
+  dashBoundaryRight: 0
 --- !u!212 &212244308000789186
 SpriteRenderer:
   m_ObjectHideFlags: 1

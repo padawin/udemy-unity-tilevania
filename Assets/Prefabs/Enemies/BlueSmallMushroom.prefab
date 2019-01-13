@@ -100,8 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpStrength: {x: 2, y: 2}
-  minX: 83.08
-  maxX: 92.03
+  minX: 0
+  maxX: 0
   minTimeBeforeTurn: 0.4
   minTimeBeforeJump: 0.5
   maxTimeBeforeJump: 1.5
