@@ -7,7 +7,7 @@ public class DamageDealer : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		ActorHealth health= collider.GetComponent<ActorHealth>();
-		if (health != null) {
+		if (health != null && health.canBeHit()) {
 			health.hit(this);
 		}
 	}
