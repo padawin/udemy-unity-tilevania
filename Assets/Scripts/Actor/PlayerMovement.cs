@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour {
 	int jumpsCount = 0;
 	int maxJumps = 2;
 
+	bool blocked = false;
+
 	Rigidbody2D rb;
 	Animator myAnimator;
 	GameSession gameSession;
@@ -21,6 +23,9 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
+		if (blocked) {
+			return;
+		}
 		handleInput();
 		move();
 		jump();
@@ -100,5 +105,14 @@ public class PlayerMovement : MonoBehaviour {
 			transform.localScale.y,
 			transform.localScale.z
 		);
+	}
+
+	/* For external interaction, eg. when being hit */
+	public void block() {
+		blocked = true;
+	}
+
+	public void unblock() {
+		blocked = false;
 	}
 }
