@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour {
 			return;
 		}
 
-		if (rb.velocity.y < 0) {
+		if (rb.velocity.y <= 0) {
 			rb.gravityScale = 2.5f;
 			myAnimator.SetBool("Jumping", false);
 			startFalling();
