@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114894563306057646}
   - component: {fileID: 114689415560752250}
   - component: {fileID: 114900637471730952}
+  - component: {fileID: 114651144806861142}
   m_Layer: 8
   m_Name: BlueSmallMushroom
   m_TagString: Untagged
@@ -108,6 +109,18 @@ CapsuleCollider2D:
   m_Offset: {x: -0.010196686, y: 0.05721283}
   m_Size: {x: 0.8735657, y: 0.88557434}
   m_Direction: 0
+--- !u!114 &114651144806861142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526097371075106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbd1f81a39a2497098ab99fba5d13b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitProjection: {x: 4, y: 4}
 --- !u!114 &114689415560752250
 MonoBehaviour:
   m_ObjectHideFlags: 1
