@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114790882781965384}
   - component: {fileID: 114894563306057646}
   - component: {fileID: 114689415560752250}
+  - component: {fileID: 114900637471730952}
   m_Layer: 8
   m_Name: BlueSmallMushroom
   m_TagString: Untagged
@@ -160,6 +161,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthInitial: 20
   invincibilityDuration: 1
+--- !u!114 &114900637471730952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526097371075106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1125ce152bab498ab9d4867dfe55a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212841590418171386
 SpriteRenderer:
   m_ObjectHideFlags: 1
