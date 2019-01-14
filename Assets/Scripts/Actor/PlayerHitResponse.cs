@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerHitResponse : HitResponse {
 	[SerializeField] Vector2 hitProjection;
 	Rigidbody2D rb;
-	Player player;
+	Actor actor;
 	Animator myAnimator;
 
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
-		player = GetComponent<Player>();
+		actor = GetComponent<Actor>();
 		myAnimator = GetComponent<Animator>();
 	}
 
@@ -20,6 +20,6 @@ public class PlayerHitResponse : HitResponse {
 		);
 		rb.velocity = new Vector2(hitDirection * hitProjection.x, hitProjection.y);
 		myAnimator.SetTrigger("BeingHit");
-		player.block();
+		actor.block();
 	}
 }
