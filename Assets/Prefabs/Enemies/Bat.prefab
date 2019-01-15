@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114346263565571964}
   - component: {fileID: 114376131769131292}
   - component: {fileID: 114461514541373594}
+  - component: {fileID: 114872364597875684}
   m_Layer: 8
   m_Name: Bat
   m_TagString: Untagged
@@ -166,6 +167,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3417a2d5f27fb4dc492593f813eac2bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114872364597875684
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1275694239369234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1125ce152bab498ab9d4867dfe55a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212131248244066432

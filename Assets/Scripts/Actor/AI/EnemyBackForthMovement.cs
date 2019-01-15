@@ -10,14 +10,19 @@ public class EnemyBackForthMovement : MonoBehaviour {
 	float target;
 
 	protected Rigidbody2D rb;
+	Actor actor;
 
 	protected void Start() {
 		rb = GetComponent<Rigidbody2D>();
+		actor = GetComponent<Actor>();
 		target = maxX;
 		updateOrientation();
 	}
 
 	protected void Update () {
+		if (actor.isBlocked()) {
+			return;
+		}
 		moveTowardTarget();
 		if (turnAround()) {
 			updateOrientation();

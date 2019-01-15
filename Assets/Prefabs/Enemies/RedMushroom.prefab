@@ -29,6 +29,8 @@ GameObject:
   - component: {fileID: 114974888234340304}
   - component: {fileID: 114098253939216316}
   - component: {fileID: 114300542126180362}
+  - component: {fileID: 114984406060261758}
+  - component: {fileID: 114058927130508704}
   m_Layer: 8
   m_Name: RedMushroom
   m_TagString: Untagged
@@ -143,6 +145,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114058927130508704
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812610847498954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1125ce152bab498ab9d4867dfe55a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114098253939216316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8003f04079a4d4996037e56306f46c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthInitial: 40
+  maxHealthInitial: 100
   invincibilityDuration: 1
 --- !u!114 &114300542126180362
 MonoBehaviour:
@@ -205,6 +218,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be5f7210b393c47d7b301da9e75b7473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114984406060261758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812610847498954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbd1f81a39a2497098ab99fba5d13b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitProjection: {x: 4, y: 4}
 --- !u!212 &212339708388722142
 SpriteRenderer:
   m_ObjectHideFlags: 1

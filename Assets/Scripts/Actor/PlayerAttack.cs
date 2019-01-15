@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
 	Animator myAnimator;
-	Player player;
+	Actor actor;
 
 	void Start() {
-		player = GetComponent<Player>();
+		actor = GetComponent<Actor>();
 		myAnimator = GetComponent<Animator>();
 	}
 
 	void Update() {
-		if (player.isBlocked()) {
+		if (actor.isBlocked()) {
 			return;
 		}
 		handleInput();
@@ -25,11 +25,11 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	void attack() {
-		player.block();
+		actor.block();
 		myAnimator.SetTrigger("Attacking");
 	}
 
 	void stopAttack() {
-		player.unblock();
+		actor.unblock();
 	}
 }

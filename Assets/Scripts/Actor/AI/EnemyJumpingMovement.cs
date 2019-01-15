@@ -16,10 +16,12 @@ public class EnemyJumpingMovement : MonoBehaviour {
 	bool isJumping = false;
 
 	Rigidbody2D rb;
+	Actor actor;
 
 	void Start () {
 		lastXPosition = transform.position.x;
 		rb = GetComponent<Rigidbody2D>();
+		actor = GetComponent<Actor>();
 	}
 
 	void OnCollisionEnter2D(Collision2D collider) {
@@ -29,6 +31,9 @@ public class EnemyJumpingMovement : MonoBehaviour {
 	}
 
 	void Update () {
+		if (actor.isBlocked()) {
+			return;
+		}
 		if (!isJumping) {
 			StartCoroutine(prepareNextJump());
 		}

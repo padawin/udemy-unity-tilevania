@@ -8,8 +8,12 @@ public class CastleEntranceKnight : MonoBehaviour {
 	[SerializeField] float dashSpeed = 1f;
 	[SerializeField] float dashBoundaryLeft;
 	[SerializeField] float dashBoundaryRight;
+	[SerializeField] Collider2D playerDetector;
 	float direction = -1f;
+	// states
+	bool isStandingBy = true;
 	bool isDashing = false;
+
 	bool seesPlayer = false;
 
 	Animator myAnimator;
@@ -22,38 +26,29 @@ public class CastleEntranceKnight : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D>();
 	}
 
-	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.gameObject.name == "Player") {
-			myAnimator.SetBool("SeesPlayer", true);
-			seesPlayer = true;
+	bool isSeeingPlayer() {
+		bool nowSeesPlayer = playerDetector.IsTouchingLayers(LayerMask.GetMask("Player"));
+		if (nowSeesPlayer != seesPlayer) {
+			myAnimator.SetBool("SeesPlayer", nowSeesPlayer);
 		}
-	}
-
-	void OnTriggerExit2D(Collider2D collider) {
-		if (collider.gameObject.name == "Player") {
-			myAnimator.SetBool("SeesPlayer", false);
-			seesPlayer = false;
-		}
+		seesPlayer = nowSeesPlayer;
+		return seesPlayer;
 	}
 
 	void Update() {
-		if (!isDashing) {
-			if (seesPlayer) {
-				turnToward(player);
-				StartCoroutine(dash());
-			}
+		if (isStandingBy && isSeeingPlayer()) {
+			isStandingBy = false;
+			turnToward(player);
+			StartCoroutine(dash());
 		}
-		else {
-			bool isOutOfBound = (
-				transform.position.x < dashBoundaryLeft ||
-				dashBoundaryRight < transform.position.x
-			);
-			if (isOutOfBound) {
-				keepInBounds();
-				StartCoroutine(stopDashing());
+		else if (isDashing) {
+			if (!reachedBoundaries()) {
+				rb.velocity = new Vector2(direction * dashSpeed * Time.deltaTime, rb.velocity.y);
 			}
 			else {
-				rb.velocity = new Vector2(direction * dashSpeed * Time.deltaTime, rb.velocity.y);
+				isDashing = false;
+				keepInBounds();
+				StartCoroutine(stopDashing());
 			}
 		}
 	}
@@ -67,10 +62,18 @@ public class CastleEntranceKnight : MonoBehaviour {
 
 	IEnumerator dash() {
 		yield return new WaitForSeconds(timeBeforeDash);
-		if (seesPlayer) {
+		if (isSeeingPlayer()) {
 			myAnimator.SetBool("Dashes", true);
 			isDashing = true;
 		}
+		else {
+			isStandingBy = true;
+		}
+	}
+
+	bool reachedBoundaries() {
+		return transform.position.x < dashBoundaryLeft ||
+			dashBoundaryRight < transform.position.x;
 	}
 
 	void keepInBounds() {
@@ -82,8 +85,8 @@ public class CastleEntranceKnight : MonoBehaviour {
 
 	IEnumerator stopDashing() {
 		rb.velocity = new Vector2(0f, 0f);
-		isDashing = false;
 		myAnimator.SetBool("Dashes", false);
 		yield return new WaitForSeconds(timeBeforeStandby);
+		isStandingBy = true;
 	}
 }

@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4605026356885616}
   - component: {fileID: 212841590418171386}
+  - component: {fileID: 95300612273867764}
   - component: {fileID: 50722974543694782}
   - component: {fileID: 61936522947725926}
   - component: {fileID: 70255886975382564}
@@ -27,6 +28,8 @@ GameObject:
   - component: {fileID: 114790882781965384}
   - component: {fileID: 114894563306057646}
   - component: {fileID: 114689415560752250}
+  - component: {fileID: 114900637471730952}
+  - component: {fileID: 114651144806861142}
   m_Layer: 8
   m_Name: BlueSmallMushroom
   m_TagString: Untagged
@@ -107,6 +110,36 @@ CapsuleCollider2D:
   m_Offset: {x: -0.010196686, y: 0.05721283}
   m_Size: {x: 0.8735657, y: 0.88557434}
   m_Direction: 0
+--- !u!95 &95300612273867764
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526097371075106}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df64db0461f134809b685e1fd28e1dd4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114651144806861142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526097371075106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbd1f81a39a2497098ab99fba5d13b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitProjection: {x: 4, y: 4}
 --- !u!114 &114689415560752250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,8 +191,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8003f04079a4d4996037e56306f46c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthInitial: 20
+  maxHealthInitial: 40
   invincibilityDuration: 1
+--- !u!114 &114900637471730952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526097371075106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1125ce152bab498ab9d4867dfe55a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212841590418171386
 SpriteRenderer:
   m_ObjectHideFlags: 1
