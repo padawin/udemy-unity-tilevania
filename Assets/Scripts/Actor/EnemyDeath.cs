@@ -9,6 +9,9 @@ public class EnemyDeath : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		enemyHealth = GetComponent<ActorHealth>();
+		if (enemyHealth == null) {
+			enemyHealth = GetComponentInChildren<ActorHealth>();
+		}
 	}
 
 	// Update is called once per frame

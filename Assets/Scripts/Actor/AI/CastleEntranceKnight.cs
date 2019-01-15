@@ -8,6 +8,7 @@ public class CastleEntranceKnight : MonoBehaviour {
 	[SerializeField] float dashSpeed = 1f;
 	[SerializeField] float dashBoundaryLeft;
 	[SerializeField] float dashBoundaryRight;
+	[SerializeField] Collider2D playerDetector;
 	float direction = -1f;
 	// states
 	bool isStandingBy = true;
@@ -25,22 +26,17 @@ public class CastleEntranceKnight : MonoBehaviour {
 		rb = GetComponent<Rigidbody2D>();
 	}
 
-	void OnTriggerEnter2D(Collider2D collider) {
-		if (collider.gameObject.name == "Player") {
-			myAnimator.SetBool("SeesPlayer", true);
-			seesPlayer = true;
+	bool isSeeingPlayer() {
+		bool nowSeesPlayer = playerDetector.IsTouchingLayers(LayerMask.GetMask("Player"));
+		if (nowSeesPlayer != seesPlayer) {
+			myAnimator.SetBool("SeesPlayer", nowSeesPlayer);
 		}
-	}
-
-	void OnTriggerExit2D(Collider2D collider) {
-		if (collider.gameObject.name == "Player") {
-			myAnimator.SetBool("SeesPlayer", false);
-			seesPlayer = false;
-		}
+		seesPlayer = nowSeesPlayer;
+		return seesPlayer;
 	}
 
 	void Update() {
-		if (isStandingBy && seesPlayer) {
+		if (isStandingBy && isSeeingPlayer()) {
 			isStandingBy = false;
 			turnToward(player);
 			StartCoroutine(dash());
@@ -66,7 +62,7 @@ public class CastleEntranceKnight : MonoBehaviour {
 
 	IEnumerator dash() {
 		yield return new WaitForSeconds(timeBeforeDash);
-		if (seesPlayer) {
+		if (isSeeingPlayer()) {
 			myAnimator.SetBool("Dashes", true);
 			isDashing = true;
 		}
