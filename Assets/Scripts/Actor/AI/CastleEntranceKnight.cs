@@ -18,13 +18,11 @@ public class CastleEntranceKnight : MonoBehaviour {
 	Animator myAnimator;
 	Rigidbody2D rb;
 	GameObject player;
-	Actor actor;
 
 	void Start() {
 		player = FindObjectOfType<Player>().gameObject;
 		myAnimator = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
-		actor = GetComponent<Actor>();
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
