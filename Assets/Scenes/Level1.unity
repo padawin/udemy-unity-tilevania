@@ -48904,7 +48904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultDirection: -1
   xSpeed: 100
-  minX: 137.926
+  minX: 138.21
   maxX: 142.03
   ySpeed: 1.6
   minY: -17.97
