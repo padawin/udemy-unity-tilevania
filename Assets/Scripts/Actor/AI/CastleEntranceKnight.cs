@@ -9,7 +9,10 @@ public class CastleEntranceKnight : MonoBehaviour {
 	[SerializeField] float dashBoundaryLeft;
 	[SerializeField] float dashBoundaryRight;
 	float direction = -1f;
+	// states
+	bool isStandingBy = true;
 	bool isDashing = false;
+
 	bool seesPlayer = false;
 
 	Animator myAnimator;
@@ -39,26 +42,19 @@ public class CastleEntranceKnight : MonoBehaviour {
 	}
 
 	void Update() {
-		if (actor.isBlocked()) {
-			return;
+		if (isStandingBy && seesPlayer) {
+			isStandingBy = false;
+			turnToward(player);
+			StartCoroutine(dash());
 		}
-		else if (!isDashing) {
-			if (seesPlayer) {
-				turnToward(player);
-				StartCoroutine(dash());
-			}
-		}
-		else {
-			bool isOutOfBound = (
-				transform.position.x < dashBoundaryLeft ||
-				dashBoundaryRight < transform.position.x
-			);
-			if (isOutOfBound) {
-				keepInBounds();
-				StartCoroutine(stopDashing());
+		else if (isDashing) {
+			if (!reachedBoundaries()) {
+				rb.velocity = new Vector2(direction * dashSpeed * Time.deltaTime, rb.velocity.y);
 			}
 			else {
-				rb.velocity = new Vector2(direction * dashSpeed * Time.deltaTime, rb.velocity.y);
+				isDashing = false;
+				keepInBounds();
+				StartCoroutine(stopDashing());
 			}
 		}
 	}
@@ -76,6 +72,14 @@ public class CastleEntranceKnight : MonoBehaviour {
 			myAnimator.SetBool("Dashes", true);
 			isDashing = true;
 		}
+		else {
+			isStandingBy = true;
+		}
+	}
+
+	bool reachedBoundaries() {
+		return transform.position.x < dashBoundaryLeft ||
+			dashBoundaryRight < transform.position.x;
 	}
 
 	void keepInBounds() {
@@ -87,8 +91,8 @@ public class CastleEntranceKnight : MonoBehaviour {
 
 	IEnumerator stopDashing() {
 		rb.velocity = new Vector2(0f, 0f);
-		isDashing = false;
 		myAnimator.SetBool("Dashes", false);
 		yield return new WaitForSeconds(timeBeforeStandby);
+		isStandingBy = true;
 	}
 }
