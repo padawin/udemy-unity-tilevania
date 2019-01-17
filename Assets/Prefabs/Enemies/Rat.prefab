@@ -21,10 +21,15 @@ GameObject:
   - component: {fileID: 4786375407308888}
   - component: {fileID: 212673696503097756}
   - component: {fileID: 50577027717077398}
+  - component: {fileID: 95281369306219882}
   - component: {fileID: 70830500923920420}
   - component: {fileID: 61774186332960536}
   - component: {fileID: 114497650955177120}
   - component: {fileID: 114858829722587022}
+  - component: {fileID: 114781827305317656}
+  - component: {fileID: 114461251640829070}
+  - component: {fileID: 114661266804139458}
+  - component: {fileID: 114033453056345386}
   m_Layer: 8
   m_Name: Rat
   m_TagString: Untagged
@@ -105,6 +110,49 @@ CapsuleCollider2D:
   m_Offset: {x: 0.0731586, y: -0.27695346}
   m_Size: {x: 1.8536887, y: 0.4460944}
   m_Direction: 1
+--- !u!95 &95281369306219882
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1259494652995072}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5eae6b01a34fb4b519c5870550fb1328, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114033453056345386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1259494652995072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbd1f81a39a2497098ab99fba5d13b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitProjection: {x: 6, y: 6}
+--- !u!114 &114461251640829070
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1259494652995072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8003f04079a4d4996037e56306f46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthInitial: 50
+  invincibilityDuration: 1
 --- !u!114 &114497650955177120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,6 +164,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1125ce152bab498ab9d4867dfe55a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114661266804139458
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1259494652995072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3417a2d5f27fb4dc492593f813eac2bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114781827305317656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1259494652995072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fce47c3501034d6e9dda8798e17728d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damages: 10
 --- !u!114 &114858829722587022
 MonoBehaviour:
   m_ObjectHideFlags: 1
