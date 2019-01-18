@@ -19,9 +19,20 @@ public class FlyInArea : MonoBehaviour {
 	Rigidbody2D rb;
 	Transform player;
 
-	void setDestination(Vector2 newDestination) {
+	public void setDestination(Vector2 newDestination) {
 		destination = new Vector2(newDestination.x, newDestination.y);
 		destinationEverSet = true;
+	}
+
+	public void setSpeed(float speed) {
+		this.speed = speed;
+	}
+
+	public void setArea(float minX, float maxX, float minY, float maxY) {
+		this.minX = minX;
+		this.maxX = maxX;
+		this.minY = minY;
+		this.maxY = maxY;
 	}
 
 	void Start() {
