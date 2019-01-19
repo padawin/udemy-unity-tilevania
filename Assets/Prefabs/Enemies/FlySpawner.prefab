@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1257431644311770}
+  m_IsPrefabAsset: 1
+--- !u!1 &1257431644311770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4890555649384148}
+  - component: {fileID: 114662849321680114}
+  m_Layer: 0
+  m_Name: FlySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4890555649384148
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1257431644311770}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 63.29, y: 29.02, z: -0.26754048}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114662849321680114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1257431644311770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be7c75298cfe4176a047db2eedcbcfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {x: 58.99, y: 28.14}
+  looping: 1
+  maxNbEnemies: 7
+  minTimeBeforeSpawn: 1
+  maxTimeBeforeSpawn: 3
+  enemyPrefabs:
+  - {fileID: 1026075594158220, guid: c62f81969f46741a7b1bfe06465d878b, type: 2}
+  - {fileID: 1026075594158220, guid: 0901c39ab78ad4bdfa1b2d93c5b3c487, type: 2}
+  - {fileID: 1026075594158220, guid: 4bf3cd3267b074c3f9849e86223d862c, type: 2}
+  speed: 8
+  minX: 36.84843
+  maxX: 60.22
+  minY: 23.93
+  maxY: 30.28745
