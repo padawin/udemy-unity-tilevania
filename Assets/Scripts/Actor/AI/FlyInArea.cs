@@ -17,6 +17,7 @@ public class FlyInArea : MonoBehaviour {
 	Vector2 lastKnownPosition;
 
 	Rigidbody2D rb;
+	Actor actor;
 	Transform player;
 
 	public void setDestination(Vector2 newDestination) {
@@ -37,6 +38,7 @@ public class FlyInArea : MonoBehaviour {
 
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
+		actor = GetComponent<Actor>();
 		player = FindObjectOfType<Player>().gameObject.GetComponent<Transform>();
 		if (!destinationEverSet) {
 			findNextDestination();
@@ -62,6 +64,9 @@ public class FlyInArea : MonoBehaviour {
 	}
 
 	void Update () {
+		if (actor.isBlocked()) {
+			return;
+		}
 		if (reachedDestination()) {
 			findNextDestination();
 		}
