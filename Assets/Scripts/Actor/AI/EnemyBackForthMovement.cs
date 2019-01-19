@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBackForthMovement : MonoBehaviour {
-	[SerializeField] int defaultDirection;
+	[SerializeField] float defaultDirection;
 	[SerializeField] float xSpeed = 100f;
 	[SerializeField] float minX;
 	[SerializeField] float maxX;
@@ -13,6 +13,7 @@ public class EnemyBackForthMovement : MonoBehaviour {
 	Actor actor;
 
 	protected void Start() {
+		defaultDirection = Mathf.Sign(defaultDirection);
 		rb = GetComponent<Rigidbody2D>();
 		actor = GetComponent<Actor>();
 		target = maxX;
@@ -24,9 +25,8 @@ public class EnemyBackForthMovement : MonoBehaviour {
 			return;
 		}
 		moveTowardTarget();
-		if (turnAround()) {
-			updateOrientation();
-		}
+		updateTarget();
+		updateOrientation();
 	}
 
 	void moveTowardTarget() {
@@ -36,17 +36,16 @@ public class EnemyBackForthMovement : MonoBehaviour {
 		);
 	}
 
-	bool turnAround() {
+	void updateTarget() {
 		if (minX <= transform.position.x && transform.position.x <= maxX) {
-			return false;
+			return;
 		}
 
 		target = target == maxX ? minX : maxX;
-		return true;
 	}
 
 	void updateOrientation() {
-		float direction = Mathf.Sign(defaultDirection) * Mathf.Sign(transform.position.x - target);
+		float direction = defaultDirection * Mathf.Sign(target - transform.position.x);
 		transform.localScale = new Vector3(
 			direction,
 			transform.localScale.y,

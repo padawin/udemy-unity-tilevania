@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc89208de4984412b82a745c0786c3bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultDirection: 0
+  defaultDirection: -1
   xSpeed: 500
   minX: 0
   maxX: 0
