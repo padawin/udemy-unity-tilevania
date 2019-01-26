@@ -27,14 +27,15 @@ public class PlayerMovement : MonoBehaviour {
 			return;
 		}
 		handleInput();
-		move();
+		float delta = getDelta();
+		move(delta);
 		jump();
 		fall();
 		updateOrientation();
 	}
 
 	float getDelta() {
-		return Input.GetAxis("Horizontal") * Time.deltaTime * speed;
+		return Input.GetAxis("Horizontal");
 	}
 
 	void handleInput() {
@@ -58,8 +59,8 @@ public class PlayerMovement : MonoBehaviour {
 		jumpsCount++;
 	}
 
-	void move() {
-		float delta = getDelta();
+	public void move(float delta) {
+		delta *= Time.deltaTime * speed;
 		rb.velocity = new Vector2(delta, rb.velocity.y);
 		myAnimator.SetBool("Running", delta != 0);
 		if (rb.velocity.y < 0) {
