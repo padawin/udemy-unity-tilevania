@@ -10,22 +10,27 @@ public class InteractText : MonoBehaviour {
 	[SerializeField] TextMeshProUGUI textTextField;
 
 	Canvas myCanvas;
+	Grid myGrid;
 	int currentPage = 0;
 
 	void Start () {
 		myCanvas = GetComponentInChildren<Canvas>();
+		myGrid = GetComponentInChildren<Grid>();
 		myCanvas.enabled = false;
+		myGrid.gameObject.SetActive(false);
 		titleTextField.text = title;
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		myCanvas.enabled = true;
+		myGrid.gameObject.SetActive(true);
 		currentPage = 0;
 		updateText();
 	}
 
 	void OnTriggerExit2D(Collider2D collider) {
 		myCanvas.enabled = false;
+		myGrid.gameObject.SetActive(false);
 	}
 
 	void updateText() {
@@ -43,6 +48,7 @@ public class InteractText : MonoBehaviour {
 			}
 			else {
 				myCanvas.enabled = false;
+				myGrid.gameObject.SetActive(false);
 			}
 		}
 	}
