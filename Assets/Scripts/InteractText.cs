@@ -18,7 +18,7 @@ public class InteractText : MonoBehaviour {
 		myGrid = GetComponentInChildren<Grid>();
 		myCanvas.enabled = false;
 		myGrid.gameObject.SetActive(false);
-		titleTextField.text = title;
+		titleTextField.text = title.ToUpper();
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
@@ -34,7 +34,7 @@ public class InteractText : MonoBehaviour {
 	}
 
 	void updateText() {
-		textTextField.text = pages[currentPage];
+		textTextField.text = pages[currentPage].ToUpper();
 	}
 
 	void Update () {
