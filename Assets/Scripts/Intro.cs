@@ -14,6 +14,7 @@ public class Intro : MonoBehaviour {
 	PlayerMovement playerMovement;
 
 	void Start () {
+		myCamera.Follow = transform;
 		playerMovement = player.GetComponent<PlayerMovement>();
 		player.block();
 	}
