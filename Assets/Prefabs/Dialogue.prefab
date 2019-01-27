@@ -193,8 +193,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Intro
   pages:
-  - Welcome
-  - Story
+  - Some text
+  - Some text
   - Movements
   titleTextField: {fileID: 114798772244626290}
   textTextField: {fileID: 114079412620259318}
