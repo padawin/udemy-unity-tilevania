@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour {
 	Animator myAnimator;
 	Actor actor;
+	PlayerMovement playerMovement;
 
 	void Start() {
 		actor = GetComponent<Actor>();
+		playerMovement = GetComponent<PlayerMovement>();
 		myAnimator = GetComponent<Animator>();
 	}
 
@@ -32,6 +34,7 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	void attack() {
+		playerMovement.setDelta(0f);
 		actor.block();
 		myAnimator.SetTrigger("Attacking");
 	}
