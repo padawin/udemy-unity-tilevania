@@ -19,9 +19,16 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	void handleInput() {
-		if (Input.GetButtonUp("Fire1")) {
+		if (Input.GetButtonDown("Fire1")) {
+			prepareAttack();
+		}
+		else if (Input.GetButtonUp("Fire1")) {
 			attack();
 		}
+	}
+
+	void prepareAttack() {
+		myAnimator.SetTrigger("PreparingAttack");
 	}
 
 	void attack() {
