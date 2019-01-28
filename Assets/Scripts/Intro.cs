@@ -37,7 +37,7 @@ public class Intro : MonoBehaviour {
 		}
 		else if (playerArrivedToDestination()) {
 			player.unblock();
-			playerMovement.move(0f);
+			playerMovement.setDelta(0f);
 			Destroy(gameObject);
 		}
 	}
@@ -57,7 +57,7 @@ public class Intro : MonoBehaviour {
 	}
 
 	void makePlayerMove() {
-		playerMovement.move(0.5f);
+		playerMovement.setDelta(0.5f);
 	}
 
 	bool playerArrivedToDestination() {

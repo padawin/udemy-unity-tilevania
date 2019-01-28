@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	int jumpsCount = 0;
 	int maxJumps = 2;
+	float delta = 0f;
 
 	Rigidbody2D rb;
 	Animator myAnimator;
@@ -23,18 +24,20 @@ public class PlayerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update() {
-		if (actor.isBlocked()) {
-			return;
+		if (!actor.isBlocked()) {
+			handleInput();
 		}
-		handleInput();
-		float delta = getDelta();
-		move(delta);
+		move();
 		jump();
 		fall();
 		updateOrientation();
 	}
 
-	float getDelta() {
+	public void setDelta(float val) {
+		delta = val;
+	}
+
+	float getDeltaFromInput() {
 		return Input.GetAxis("Horizontal");
 	}
 
@@ -42,6 +45,7 @@ public class PlayerMovement : MonoBehaviour {
 		if (Input.GetButtonDown("Jump") && canJump()) {
 			startJump();
 		}
+		setDelta(getDeltaFromInput());
 	}
 
 	bool canJump() {
@@ -59,10 +63,10 @@ public class PlayerMovement : MonoBehaviour {
 		jumpsCount++;
 	}
 
-	public void move(float delta) {
-		delta *= Time.deltaTime * speed;
-		rb.velocity = new Vector2(delta, rb.velocity.y);
-		myAnimator.SetBool("Running", delta != 0);
+	void move() {
+		float localDelta = delta * Time.deltaTime * speed;
+		rb.velocity = new Vector2(localDelta, rb.velocity.y);
+		myAnimator.SetBool("Running", localDelta != 0);
 		if (rb.velocity.y < 0) {
 			startFalling();
 		}
