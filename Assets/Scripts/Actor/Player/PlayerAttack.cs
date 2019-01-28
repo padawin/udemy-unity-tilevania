@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	void handleInput() {
-		if (Input.GetButtonDown("Fire1")) {
+		if (Input.GetButtonUp("Fire1")) {
 			attack();
 		}
 	}
