@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
 	[SerializeField] float minTimeToLoad = 0.001f;
+	[SerializeField] float minTimeToPrepareFireball = 1f;
+	[SerializeField] ParticleSystem fireballPrepared;
+	[SerializeField] ParticleSystem fireballReady;
 
 	float timeButtonPressed;
 	bool isPreparingAttack = false;
+	bool isPreparingFireball = false;
 
 	Animator myAnimator;
 	Actor actor;
@@ -25,9 +29,7 @@ public class PlayerAttack : MonoBehaviour {
 			return;
 		}
 		handleInput();
-		// Attack button still pressed, Start loading a fireball
-		if (isPreparingAttack && pressedLong()) {
-		}
+		prepareFireball();
 	}
 
 	void handleInput() {
@@ -37,7 +39,7 @@ public class PlayerAttack : MonoBehaviour {
 		}
 		else if (Input.GetButtonUp("Fire1")) {
 			if (isPreparingAttack && gameSession.playerHasBonus("Fireball")) {
-				Debug.Log("Throw fireball");
+				throwFireball();
 			}
 			attack();
 		}
@@ -48,11 +50,40 @@ public class PlayerAttack : MonoBehaviour {
 		myAnimator.SetTrigger("PreparingAttack");
 	}
 
+	void throwFireball() {
+		Debug.Log("Throw fireball");
+		isPreparingFireball = false;
+		fireballReady.gameObject.SetActive(false);
+	}
+
 	void attack() {
 		isPreparingAttack = false;
 		playerMovement.setDelta(0f);
 		actor.block();
 		myAnimator.SetTrigger("Attacking");
+	}
+
+	void prepareFireball() {
+		if (!gameSession.playerHasBonus("Fireball")) {
+			return;
+		}
+
+		bool fireballPreparedActive = fireballPrepared.gameObject.activeSelf,
+			 fireballReadyActive = fireballReady.gameObject.activeSelf;
+		if (isPreparingFireball && isFireballReady()) {
+			if (!fireballReadyActive) {
+				fireballPrepared.gameObject.SetActive(false);
+				fireballReady.gameObject.SetActive(true);
+			}
+		}
+		else if (isPreparingAttack && pressedLong() && !fireballPreparedActive) {
+			fireballPrepared.gameObject.SetActive(true);
+			isPreparingFireball = true;
+		}
+	}
+
+	bool isFireballReady() {
+		return Time.realtimeSinceStartup - timeButtonPressed > minTimeToPrepareFireball;
 	}
 
 	bool pressedLong() {
