@@ -6,4 +6,7 @@ https://opengameart.org/content/peasant
 https://opengameart.org/content/simpleton
 https://opengameart.org/content/scare-crow
 
+Explosion + fireball: Game Dev Market
+(https://www.gamedevmarket.net/terms-and-conditions
+
 Game Concept + Coding from Ghislain Rodrigues (https://www.ghislain-rodrigues.fr)

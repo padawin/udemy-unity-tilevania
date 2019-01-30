@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour {
 	[SerializeField] float minTimeToPrepareFireball = 1f;
 	[SerializeField] ParticleSystem fireballPrepared;
 	[SerializeField] ParticleSystem fireballReady;
+	[SerializeField] GameObject fireball;
 
 	float timeButtonPressed;
 	bool isPreparingAttack = false;
@@ -51,9 +52,15 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
 	void throwFireball() {
-		Debug.Log("Throw fireball");
+		if (isFireballReady()) {
+			GameObject fb = Instantiate(
+				fireball, transform.position, Quaternion.identity
+			);
+			fb.GetComponent<Fireball>().setDirection(playerMovement.getDirection());
+		}
 		isPreparingFireball = false;
 		fireballReady.gameObject.SetActive(false);
+		fireballPrepared.gameObject.SetActive(false);
 	}
 
 	void attack() {

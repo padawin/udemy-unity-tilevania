@@ -324,6 +324,7 @@ MonoBehaviour:
   minTimeToPrepareFireball: 1
   fireballPrepared: {fileID: 198708641151045264}
   fireballReady: {fileID: 198085610706209556}
+  fireball: {fileID: 1052552241884360, guid: 6e5f51a09bdfe4e328a75442c3c968dc, type: 2}
 --- !u!114 &114862319991232726
 MonoBehaviour:
   m_ObjectHideFlags: 1
