@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
 	int jumpsCount = 0;
 	int maxJumps = 2;
 	float delta = 0f;
+	float direction = 1f;
 
 	Rigidbody2D rb;
 	Animator myAnimator;
@@ -101,14 +102,19 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void updateOrientation() {
-		float direction = Mathf.Sign(rb.velocity.x);
-		if (rb.velocity.x == 0 || direction == transform.localScale.x) {
+		float newDirection = Mathf.Sign(rb.velocity.x);
+		if (rb.velocity.x == 0 || newDirection == transform.localScale.x) {
 			return;
 		}
+		direction = newDirection;
 		transform.localScale = new Vector3(
 			Mathf.Sign(rb.velocity.x),
 			transform.localScale.y,
 			transform.localScale.z
 		);
+	}
+
+	public float getDirection() {
+		return direction;
 	}
 }
