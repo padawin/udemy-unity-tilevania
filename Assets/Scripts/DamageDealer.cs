@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageDealer : MonoBehaviour {
+public class DamageDealer : Observable {
 	[SerializeField] int damages = 10;
 	bool active = true;
 
@@ -10,6 +10,7 @@ public class DamageDealer : MonoBehaviour {
 		ActorHealth health= collider.GetComponent<ActorHealth>();
 		if (active && health != null && health.canBeHit()) {
 			health.hit(this);
+			notify();
 		}
 	}
 
