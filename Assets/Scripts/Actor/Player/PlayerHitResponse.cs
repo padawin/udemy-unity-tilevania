@@ -14,7 +14,7 @@ public class PlayerHitResponse : HitResponse {
 		myAnimator = GetComponent<Animator>();
 	}
 
-	override public void run (GameObject source) {
+	override public void run(GameObject source) {
 		float hitDirection = Mathf.Sign(
 			transform.position.x - source.transform.position.x
 		);
