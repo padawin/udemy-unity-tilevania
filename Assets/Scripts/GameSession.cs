@@ -26,4 +26,11 @@ public class GameSession : MonoBehaviour {
 	public void addPlayerBonus(string bonus) {
 		playerBonuses.Add(bonus);
 	}
+
+	public void disableBonusesFromScene() {
+		Bonus[] bonuses = FindObjectsOfType<Bonus>();
+		foreach (Bonus bonus in bonuses) {
+			playerBonuses.Remove(bonus.getName());
+		}
+	}
 }
