@@ -5,6 +5,19 @@ using UnityEngine;
 public class SceneLoader : MonoBehaviour {
 	int lastLoadedSceneIndex = 1;
 
+	void Awake () {
+		SetUpSingleton();
+	}
+
+	private void SetUpSingleton() {
+		if (FindObjectsOfType<SceneLoader>().Length > 1) {
+			Destroy(gameObject);
+		}
+		else {
+			DontDestroyOnLoad(gameObject);
+		}
+	}
+
 	private void _loadScene(int index) {
 		lastLoadedSceneIndex = SceneManager.GetActiveScene().buildIndex;
 		SceneManager.LoadScene(index);
