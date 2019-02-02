@@ -65,7 +65,9 @@ public class PlayerAttack : MonoBehaviour {
 
 	void attack() {
 		isPreparingAttack = false;
-		playerMovement.setDelta(0f);
+		if (!playerMovement.isInTheAir()) {
+			playerMovement.setDelta(0f);
+		}
 		actor.block();
 		myAnimator.SetTrigger("Attacking");
 	}

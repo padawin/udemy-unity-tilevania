@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour {
 	int maxJumps = 2;
 	float delta = 0f;
 	float direction = 1f;
+	bool inTheAir = false;
 
 	Rigidbody2D rb;
 	Animator myAnimator;
@@ -57,6 +58,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void startJump() {
+		inTheAir = true;
 		rb.gravityScale = 1f;
 		rb.velocity = new Vector2(rb.velocity.x, jumpInitialVelocity);
 		myAnimator.SetBool("Falling", false);
@@ -98,6 +100,7 @@ public class PlayerMovement : MonoBehaviour {
 			rb.gravityScale = 1f;
 			myAnimator.SetBool("Falling", false);
 			jumpsCount = 0;
+			inTheAir = false;
 		}
 	}
 
@@ -116,5 +119,9 @@ public class PlayerMovement : MonoBehaviour {
 
 	public float getDirection() {
 		return direction;
+	}
+
+	public bool isInTheAir() {
+		return inTheAir;
 	}
 }
