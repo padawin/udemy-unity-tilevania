@@ -15,4 +15,8 @@ public class Bonus : MonoBehaviour {
 	void grant() {
 		FindObjectOfType<GameSession>().addPlayerBonus(bonusName);
 	}
+
+	public string getName() {
+		return bonusName;
+	}
 }
