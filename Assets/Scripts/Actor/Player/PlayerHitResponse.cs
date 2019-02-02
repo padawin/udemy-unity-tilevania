@@ -22,4 +22,8 @@ public class PlayerHitResponse : HitResponse {
 		myAnimator.SetTrigger("BeingHit");
 		actor.block();
 	}
+
+	override public void end() {
+		actor.unblock();
+	}
 }
