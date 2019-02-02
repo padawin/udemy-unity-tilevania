@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour {
-	[SerializeField] SceneLoader sceneLoader;
 	[SerializeField] float timeBeforeGameOver = 3;
+	SceneLoader sceneLoader;
 	ActorHealth playerHealth;
 
 	// Use this for initialization
 	void Start () {
 		playerHealth = GetComponent<ActorHealth>();
+		sceneLoader = FindObjectOfType<SceneLoader>();
 	}
 
 	// Update is called once per frame

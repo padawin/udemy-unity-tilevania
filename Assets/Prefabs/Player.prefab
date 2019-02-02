@@ -296,7 +296,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65169606c93614904a015818d89ec2e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneLoader: {fileID: 0}
   timeBeforeGameOver: 3
 --- !u!114 &114585464572448612
 MonoBehaviour:
