@@ -7,11 +7,13 @@ public class PlayerHitResponse : HitResponse {
 	Rigidbody2D rb;
 	Actor actor;
 	Animator myAnimator;
+	PlayerMovement playerMovement;
 
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
 		actor = GetComponent<Actor>();
 		myAnimator = GetComponent<Animator>();
+		playerMovement = GetComponent<PlayerMovement>();
 	}
 
 	override public void run(GameObject source) {
@@ -19,11 +21,13 @@ public class PlayerHitResponse : HitResponse {
 			transform.position.x - source.transform.position.x
 		);
 		rb.velocity = new Vector2(hitDirection * hitProjection.x, hitProjection.y);
+		playerMovement.blockMovements();
 		myAnimator.SetTrigger("BeingHit");
 		actor.block();
 	}
 
 	override public void end() {
+		playerMovement.unblockMovements();
 		actor.unblock();
 	}
 }

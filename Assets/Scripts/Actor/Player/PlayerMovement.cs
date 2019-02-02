@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour {
 	float delta = 0f;
 	float direction = 1f;
 	bool inTheAir = false;
+	bool movementsBlocked = false;
 
 	Rigidbody2D rb;
 	Animator myAnimator;
@@ -28,6 +29,10 @@ public class PlayerMovement : MonoBehaviour {
 	void Update() {
 		if (!actor.isBlocked()) {
 			handleInput();
+		}
+
+		if (movementsBlocked) {
+			return;
 		}
 		move();
 		jump();
@@ -123,5 +128,13 @@ public class PlayerMovement : MonoBehaviour {
 
 	public bool isInTheAir() {
 		return inTheAir;
+	}
+
+	public void blockMovements() {
+		movementsBlocked = true;
+	}
+
+	public void unblockMovements() {
+		movementsBlocked = false;
 	}
 }
