@@ -16,8 +16,7 @@ public class InteractText : MonoBehaviour {
 	void Start () {
 		myCanvas = GetComponentInChildren<Canvas>();
 		myGrid = GetComponentInChildren<Grid>();
-		myCanvas.enabled = false;
-		myGrid.gameObject.SetActive(false);
+		hide();
 		titleTextField.text = title.ToUpper();
 	}
 
@@ -47,8 +46,7 @@ public class InteractText : MonoBehaviour {
 				updateText();
 			}
 			else {
-				myCanvas.enabled = false;
-				myGrid.gameObject.SetActive(false);
+				hide();
 			}
 		}
 	}
