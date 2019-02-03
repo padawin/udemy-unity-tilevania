@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class InteractText : MonoBehaviour {
+public class InteractText : Observable {
 	[SerializeField] string title;
 	[SerializeField] string[] pages;
 	[SerializeField] TextMeshProUGUI titleTextField;
@@ -47,6 +47,7 @@ public class InteractText : MonoBehaviour {
 			}
 			else {
 				hide();
+				notify();
 			}
 		}
 	}
