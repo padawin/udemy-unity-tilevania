@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDeath : MonoBehaviour {
+public class EnemyDeath : Observable {
 	ActorHealth enemyHealth;
 	bool isDead = false;
 
@@ -18,6 +18,7 @@ public class EnemyDeath : MonoBehaviour {
 	void Update () {
 		if (!isDead && enemyHealth.getHealth() <= 0) {
 			isDead = true;
+			notify();
 			DamageDealer dd = GetComponent<DamageDealer>();
 			if (dd == null) {
 				dd = GetComponentInChildren<DamageDealer>();
