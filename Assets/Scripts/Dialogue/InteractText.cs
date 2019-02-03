@@ -21,14 +21,14 @@ public class InteractText : MonoBehaviour {
 		titleTextField.text = title.ToUpper();
 	}
 
-	void OnTriggerEnter2D(Collider2D collider) {
+	public void display() {
 		myCanvas.enabled = true;
 		myGrid.gameObject.SetActive(true);
 		currentPage = 0;
 		updateText();
 	}
 
-	void OnTriggerExit2D(Collider2D collider) {
+	public void hide() {
 		myCanvas.enabled = false;
 		myGrid.gameObject.SetActive(false);
 	}
