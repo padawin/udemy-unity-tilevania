@@ -10,7 +10,9 @@ public class GameOver : MonoBehaviour {
 		sceneLoader = FindObjectOfType<SceneLoader>();
 	}
 
-	public void retry() {
-		sceneLoader.loadLastLoadedScene();
+	void Update() {
+		if (Input.GetButtonDown("Submit")) {
+			sceneLoader.loadLastLoadedScene();
+		}
 	}
 }
