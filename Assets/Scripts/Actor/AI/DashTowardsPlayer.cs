@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CastleEntranceKnight : MonoBehaviour {
+public class DashTowardsPlayer : MonoBehaviour {
 	[SerializeField] float timeBeforeDash = 0f;
 	[SerializeField] float timeBeforeStandby = 0f;
 	[SerializeField] float dashSpeed = 1f;
