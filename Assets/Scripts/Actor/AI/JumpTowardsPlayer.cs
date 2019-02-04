@@ -30,7 +30,7 @@ public class JumpTowardsPlayer : MonoBehaviour {
 		if (actor.isBlocked()) {
 			return;
 		}
-		if (!isJumping) {
+		if (player != null && !isJumping) {
 			prepareNextJump();
 			jump();
 		}
