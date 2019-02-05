@@ -39,7 +39,10 @@ public class FlyInArea : MonoBehaviour {
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
 		actor = GetComponent<Actor>();
-		player = FindObjectOfType<Player>().gameObject.GetComponent<Transform>();
+		Player playerObject = FindObjectOfType<Player>();
+		if (playerObject != null) {
+			player = playerObject.gameObject.GetComponent<Transform>();
+		}
 		if (!destinationEverSet) {
 			findNextDestination();
 		}
@@ -48,7 +51,7 @@ public class FlyInArea : MonoBehaviour {
 
 	void findNextDestination() {
 		float x, y;
-		if (targetPlayer) {
+		if (player != null && targetPlayer) {
 			x = player.position.x;
 			y = player.position.y;
 		}
