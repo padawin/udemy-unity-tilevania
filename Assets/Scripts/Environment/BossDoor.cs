@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BossDoor : Observer {
-	bool isActive;
+	Rigidbody2D rb;
 
 	void Start() {
-		isActive = gameObject.activeSelf;
+		rb = GetComponent<Rigidbody2D>();
 	}
 
 	public override void notify() {
-		gameObject.SetActive(!isActive);
+		rb.bodyType = RigidbodyType2D.Dynamic;
 	}
 }
