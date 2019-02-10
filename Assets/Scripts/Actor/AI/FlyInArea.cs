@@ -51,7 +51,7 @@ public class FlyInArea : MonoBehaviour {
 
 	void findNextDestination() {
 		float x, y;
-		if (player != null && targetPlayer) {
+		if (player != null && targetPlayer && playerInArea()) {
 			x = player.position.x;
 			y = player.position.y;
 		}
@@ -60,6 +60,11 @@ public class FlyInArea : MonoBehaviour {
 			y = Random.Range(minY, maxY);
 		}
 		destination = new Vector2(x, y);
+	}
+
+	bool playerInArea() {
+		return minX <= player.position.x && player.position.x <= maxX
+			&& minY <= player.position.y && player.position.y <= maxY;
 	}
 
 	void updateLastKnownPosition() {
