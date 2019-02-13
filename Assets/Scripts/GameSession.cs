@@ -33,4 +33,50 @@ public class GameSession : MonoBehaviour {
 			playerBonuses.Remove(bonus.getName());
 		}
 	}
+
+	public void save(Vector2 position) {
+		saveBonuses();
+		savePlayerPosition(position);
+	}
+
+	public void load() {
+		disableBonusesFromScene();
+		if (PlayerPrefs.HasKey("PlayerBonuses")) {
+			string b = PlayerPrefs.GetString("PlayerBonuses");
+			string[] bonuses = b.Split(',');
+			playerBonuses = new HashSet<string>(bonuses);
+		}
+	}
+	private void saveBonuses() {
+		string[] bonuses = new string[playerBonuses.Count];
+		playerBonuses.CopyTo(bonuses);
+		PlayerPrefs.SetString(
+			"PlayerBonuses",
+			string.Join(",", bonuses)
+		);
+	}
+
+	private void savePlayerPosition(Vector2 position) {
+		PlayerPrefs.SetFloat("PlayerX", position.x);
+		PlayerPrefs.SetFloat("PlayerY", position.y);
+	}
+
+	public Vector2? getPlayerPosition() {
+		if (!PlayerPrefs.HasKey("PlayerX")) {
+			return null;
+		}
+
+		float x = PlayerPrefs.GetFloat("PlayerX"),
+			  y = PlayerPrefs.GetFloat("PlayerY");
+		return new Vector2(x, y);
+	}
+
+	public void clearSave() {
+		PlayerPrefs.DeleteAll();
+	}
+
+	public void clearLevel() {
+		PlayerPrefs.DeleteKey("PlayerX");
+		PlayerPrefs.DeleteKey("PlayerY");
+	}
 }

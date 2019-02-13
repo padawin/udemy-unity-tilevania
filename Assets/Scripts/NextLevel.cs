@@ -11,6 +11,8 @@ public class NextLevel : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider) {
 		if (collider.gameObject.name == "Player") {
+			GameSession gameSession = FindObjectOfType<GameSession>();
+			gameSession.clearLevel();
 			sceneLoader.loadNextScene();
 		}
 	}
