@@ -17,6 +17,7 @@ public class LastBossDoor : ActivatorObserver {
 		if (nbActiveSwitches == nbSwitches) {
 			openState.SetActive(true);
 			closedState.SetActive(false);
+			GetComponent<Checkpoint>().save();
 		}
 	}
 }
