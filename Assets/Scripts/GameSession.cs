@@ -37,6 +37,7 @@ public class GameSession : MonoBehaviour {
 	public void save(Vector2 position) {
 		saveBonuses();
 		savePlayerPosition(position);
+		PlayerPrefs.Save();
 	}
 
 	public void load() {
@@ -73,10 +74,12 @@ public class GameSession : MonoBehaviour {
 
 	public void clearSave() {
 		PlayerPrefs.DeleteAll();
+		PlayerPrefs.Save();
 	}
 
 	public void clearLevel() {
 		PlayerPrefs.DeleteKey("PlayerX");
 		PlayerPrefs.DeleteKey("PlayerY");
+		PlayerPrefs.Save();
 	}
 }
