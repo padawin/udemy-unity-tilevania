@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour {
 	bool canJump() {
 		return (
 			!myAnimator.GetBool("Jumping") && !myAnimator.GetBool("Falling")
-			|| gameSession.playerHasBonus("DoubleJump") && jumpsCount < maxJumps
+			|| gameSession.playerHasBonus("Double Jump") && jumpsCount < maxJumps
 		);
 	}
 

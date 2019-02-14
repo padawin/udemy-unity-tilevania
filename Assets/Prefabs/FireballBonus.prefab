@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonusName: Fireball
+  notification: {fileID: 0}
 --- !u!212 &212267430215657696
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 4971584705511058}
   - component: {fileID: 114156611099755552}
   m_Layer: 0
-  m_Name: SaveNotification
+  m_Name: Notification
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,6 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeVisible: 3
   myCanvas: {fileID: 223555402278018212}
+  notificationTextField: {fileID: 114075897844782976}
 --- !u!114 &114448429015924064
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -335,7 +336,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -54}
-  m_SizeDelta: {x: 234.44995, y: 36}
+  m_SizeDelta: {x: 400, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224871168790890004
 RectTransform:

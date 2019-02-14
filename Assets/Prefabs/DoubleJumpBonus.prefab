@@ -87,7 +87,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c823880ceebaf40d892e097939e73449, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonusName: DoubleJump
+  bonusName: Double Jump
+  notification: {fileID: 0}
 --- !u!212 &212408513011268954
 SpriteRenderer:
   m_ObjectHideFlags: 1

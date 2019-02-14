@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour {
 	[SerializeField] Player player;
-	[SerializeField] SaveNotification notification;
+	[SerializeField] Notification notification;
 
 	void OnTriggerEnter2D() {
 		save();
-		notification.show();
+		notification.show("GAME SAVED");
 		Destroy(gameObject);
 	}
 
