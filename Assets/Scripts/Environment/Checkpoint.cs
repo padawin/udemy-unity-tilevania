@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour {
 	[SerializeField] Player player;
+	[SerializeField] SaveNotification notification;
 
 	void OnTriggerEnter2D() {
 		save();
+		notification.show();
 		Destroy(gameObject);
 	}
 
 	public void save() {
-		Debug.Log("Check Point!");
 		GameSession gameSession = FindObjectOfType<GameSession>();
 		gameSession.save(player.transform.position);
 	}
