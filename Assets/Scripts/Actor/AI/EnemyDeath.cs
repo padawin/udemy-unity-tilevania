@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class EnemyDeath : Observable {
 	ActorHealth enemyHealth;
+	Saveable saveable;
 	bool isDead = false;
 
 	// Use this for initialization
 	void Start () {
+		saveable = GetComponent<Saveable>();
 		enemyHealth = GetComponent<ActorHealth>();
 		if (enemyHealth == null) {
 			enemyHealth = GetComponentInChildren<ActorHealth>();
@@ -19,6 +21,9 @@ public class EnemyDeath : Observable {
 		if (!isDead && enemyHealth.getHealth() <= 0) {
 			isDead = true;
 			notify();
+			if (saveable != null) {
+				saveable.save();
+			}
 			DamageDealer dd = GetComponent<DamageDealer>();
 			if (dd == null) {
 				dd = GetComponentInChildren<DamageDealer>();
