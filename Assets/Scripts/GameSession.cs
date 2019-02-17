@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour {
 	HashSet<string> playerBonuses;
+	HashSet<string> saveableObjects;
 
 	void Awake () {
 		playerBonuses = new HashSet<string>();
+		saveableObjects = new HashSet<string>();
 		SetUpSingleton();
 	}
 
@@ -36,6 +38,7 @@ public class GameSession : MonoBehaviour {
 
 	public void save(Vector2 position) {
 		saveBonuses();
+		saveObjects();
 		savePlayerPosition(position);
 		PlayerPrefs.Save();
 	}
@@ -47,7 +50,12 @@ public class GameSession : MonoBehaviour {
 			string[] bonuses = b.Split(',');
 			playerBonuses = new HashSet<string>(bonuses);
 		}
+		if (PlayerPrefs.HasKey("SaveableObjects")) {
+			string[] objects = PlayerPrefs.GetString("SaveableObjects").Split(',');
+			saveableObjects = new HashSet<string>(objects);
+		}
 	}
+
 	private void saveBonuses() {
 		string[] bonuses = new string[playerBonuses.Count];
 		playerBonuses.CopyTo(bonuses);
@@ -55,6 +63,27 @@ public class GameSession : MonoBehaviour {
 			"PlayerBonuses",
 			string.Join(",", bonuses)
 		);
+	}
+
+	private void saveObjects() {
+		Debug.Log("Save saveables");
+		string[] objects = new string[saveableObjects.Count];
+		saveableObjects.CopyTo(objects);
+		PlayerPrefs.SetString(
+			"SaveableObjects",
+			string.Join(",", objects)
+		);
+	}
+
+	public bool findSaveable(string objectID) {
+		bool isSaved = saveableObjects.Contains(objectID);
+		Debug.Log(isSaved);
+		return isSaved;
+	}
+
+	public void saveSaveable(string objectID) {
+		Debug.Log("Save saveable " + objectID);
+		saveableObjects.Add(objectID);
 	}
 
 	private void savePlayerPosition(Vector2 position) {
@@ -80,6 +109,7 @@ public class GameSession : MonoBehaviour {
 	public void clearLevel() {
 		PlayerPrefs.DeleteKey("PlayerX");
 		PlayerPrefs.DeleteKey("PlayerY");
+		PlayerPrefs.DeleteKey("SaveableObjects");
 		PlayerPrefs.Save();
 	}
 }
