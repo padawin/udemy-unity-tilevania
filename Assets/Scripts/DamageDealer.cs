@@ -7,7 +7,7 @@ public class DamageDealer : Observable {
 	bool active = true;
 
 	void OnTriggerEnter2D(Collider2D collider) {
-		ActorHealth health= collider.GetComponent<ActorHealth>();
+		ActorHealth health = collider.GetComponent<ActorHealth>();
 		if (active && health != null && health.canBeHit()) {
 			health.hit(this);
 			notify();
