@@ -15,7 +15,7 @@ public class FireProjectileSpawner : MonoBehaviour {
 		return firing;
 	}
 
-	public IEnumerator fire(int direction, float duration) {
+	public IEnumerator fire(float direction, float duration) {
 		StartCoroutine(stopFiring(duration));
 		firing = true;
 		while (firing) {
@@ -24,7 +24,7 @@ public class FireProjectileSpawner : MonoBehaviour {
 		}
 	}
 
-	void createFireball(int direction) {
+	void createFireball(float direction) {
 		var fireball = Instantiate(
 			fireProjectilePrefab, transform.position, Quaternion.identity
 		);

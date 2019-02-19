@@ -33,10 +33,13 @@ public class Firebird : Observer {
 	}
 
 	IEnumerator startFiring() {
+		float playerDirection = Mathf.Sign(
+			player.transform.position.x - transform.position.x
+		);
 		yield return new WaitForSeconds(timeBeforeFire);
 		state = BirdState.FIRE;
 		StartCoroutine(
-			fireProjectileSpawner.fire(direction, timeFiring)
+			fireProjectileSpawner.fire(playerDirection, timeFiring)
 		);
 	}
 
@@ -44,6 +47,7 @@ public class Firebird : Observer {
 		if (state == BirdState.GO) {
 			goToTarget(speed);
 			if (reachedDestination()) {
+				turnTowards(player.gameObject);
 				rb.velocity = new Vector2(0f, 0f);
 				state = BirdState.PREPARE_FIRE;
 				StartCoroutine(startFiring());
@@ -58,7 +62,17 @@ public class Firebird : Observer {
 		}
 		else if (state == BirdState.FIND_PLAYER) {
 			findClosestWaypoint();
+			turnTowards(target);
 		}
+	}
+
+	void turnTowards(GameObject gameObject) {
+		float objectDirection = Mathf.Sign(
+			gameObject.transform.position.x - transform.position.x
+		);
+		transform.localScale = new Vector2(
+			objectDirection * direction, transform.localScale.y
+		);
 	}
 
 	void goToTarget(float speed) {
