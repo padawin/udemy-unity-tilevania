@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum BirdState {STANDBY, GO_TO_START, PREPARE_FIRE, FIRE, COOL_DOWN, FIND_PLAYER, GO_TO_PLAYER};
+enum BirdState {STANDBY, GO, PREPARE_FIRE, FIRE, COOL_DOWN, FIND_PLAYER};
 
 public class Firebird : Observer {
 	[SerializeField] FireProjectileSpawner fireProjectileSpawner;
-	[SerializeField] Vector2 target;
+	[SerializeField] GameObject target;
 	[SerializeField] float speedAppears;
 	[SerializeField] float speedToPlayer;
 	[SerializeField] int direction = -1;
@@ -21,15 +21,15 @@ public class Firebird : Observer {
 	Rigidbody2D rb;
 
 	BirdState state = BirdState.STANDBY;
-	Vector2 lastKnownPosition;
+	float speed;
 
 	void Start() {
 		rb = GetComponent<Rigidbody2D>();
-		lastKnownPosition = transform.position;
 	}
 
 	override public void notify() {
-		state = BirdState.GO_TO_START;
+		state = BirdState.GO;
+		speed = speedAppears;
 	}
 
 	IEnumerator startFiring() {
@@ -41,8 +41,8 @@ public class Firebird : Observer {
 	}
 
 	void Update() {
-		if (state == BirdState.GO_TO_START) {
-			goToTarget(speedAppears);
+		if (state == BirdState.GO) {
+			goToTarget(speed);
 			if (reachedDestination()) {
 				rb.velocity = new Vector2(0f, 0f);
 				state = BirdState.PREPARE_FIRE;
@@ -57,33 +57,37 @@ public class Firebird : Observer {
 			}
 		}
 		else if (state == BirdState.FIND_PLAYER) {
-			// @TODO go to closest firing point (@TODO define firing points)
-			GameObject closest = null;
-			foreach (GameObject waypoint in waypoints) {
-
-			}
-		}
-		else if (state == BirdState.GO_TO_PLAYER) {
-			goToTarget(speedToPlayer);
+			findClosestWaypoint();
 		}
 	}
 
 	void goToTarget(float speed) {
-		Vector2 direction = target - (Vector2) transform.position;
-		float distanceToPosition = direction.magnitude;
-		direction.Normalize();
-		rb.velocity = direction * speed;
+		transform.position = Vector2.MoveTowards(
+			transform.position, target.transform.position, speed * Time.deltaTime
+		);
 	}
 
 	bool reachedDestination() {
-		return (
-			Mathf.Sign(target.y - lastKnownPosition.y) != Mathf.Sign(target.y - transform.position.y)
-			|| Mathf.Sign(target.x - lastKnownPosition.x) != Mathf.Sign(target.x - transform.position.x)
-		);
+		return target.transform.position == transform.position;
 	}
 
 	IEnumerator startHeadingTowardsPlayer() {
 		yield return new WaitForSeconds(timeToCoolDown);
 		state = BirdState.FIND_PLAYER;
+	}
+
+	void findClosestWaypoint() {
+		GameObject closest = null;
+		float closestDist = 0f;
+		foreach (GameObject waypoint in waypoints) {
+			float distance = (waypoint.transform.position - player.transform.position).magnitude;
+			if (closest == null || distance < closestDist) {
+				closest = waypoint;
+				closestDist = distance;
+			}
+		}
+		target = closest;
+		speed = speedToPlayer;
+		state = BirdState.GO;
 	}
 }
