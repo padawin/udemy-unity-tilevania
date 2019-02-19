@@ -66,7 +66,6 @@ public class GameSession : MonoBehaviour {
 	}
 
 	private void saveObjects() {
-		Debug.Log("Save saveables");
 		string[] objects = new string[saveableObjects.Count];
 		saveableObjects.CopyTo(objects);
 		PlayerPrefs.SetString(
@@ -77,12 +76,10 @@ public class GameSession : MonoBehaviour {
 
 	public bool findSaveable(string objectID) {
 		bool isSaved = saveableObjects.Contains(objectID);
-		Debug.Log(isSaved);
 		return isSaved;
 	}
 
 	public void saveSaveable(string objectID) {
-		Debug.Log("Save saveable " + objectID);
 		saveableObjects.Add(objectID);
 	}
 
