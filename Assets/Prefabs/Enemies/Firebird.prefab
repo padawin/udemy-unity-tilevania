@@ -123,10 +123,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireProjectileSpawner: {fileID: 114443662033682168}
-  startPosition: {x: 69.02, y: -60}
-  speed: 30
+  target: {fileID: 0}
+  speedAppears: 30
+  speedToPlayer: 10
   direction: -1
+  timeBeforeFire: 1
+  timeToCoolDown: 1.5
   timeFiring: 7
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  player: {fileID: 0}
 --- !u!198 &198945886135530268
 ParticleSystem:
   m_ObjectHideFlags: 1
