@@ -20,8 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4872096201212930}
   - component: {fileID: 212912724415230868}
-  - component: {fileID: 198945886135530268}
-  - component: {fileID: 199502872899330566}
   - component: {fileID: 50989905063295622}
   - component: {fileID: 114543167883096032}
   m_Layer: 8
@@ -42,6 +40,23 @@ GameObject:
   - component: {fileID: 114443662033682168}
   m_Layer: 8
   m_Name: ProjectileSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1671736472378850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4887963637011770}
+  - component: {fileID: 198485946769178148}
+  - component: {fileID: 199010662107021460}
+  m_Layer: 8
+  m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,8 +86,22 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4131231718059738}
+  - {fileID: 4887963637011770}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4887963637011770
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1671736472378850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4872096201212930}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50989905063295622
 Rigidbody2D:
@@ -136,12 +165,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   player: {fileID: 0}
---- !u!198 &198945886135530268
+--- !u!198 &198485946769178148
 ParticleSystem:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1206891476116024}
+  m_GameObject: {fileID: 1671736472378850}
   serializedVersion: 5
   lengthInSec: 5
   simulationSpeed: 1
@@ -321,8 +350,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.9811321, g: 0.027767897, b: 0.027767897, a: 1}
-      maxColor: {r: 0.9811321, g: 0.9440577, b: 0.064791724, a: 1}
+      minColor: {r: 0.9622642, g: 0.054467797, b: 0.054467797, a: 1}
+      maxColor: {r: 0.9622642, g: 0.9242997, b: 0.072623715, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4669,13 +4698,13 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &199502872899330566
+--- !u!199 &199010662107021460
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1206891476116024}
+  m_GameObject: {fileID: 1671736472378850}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
