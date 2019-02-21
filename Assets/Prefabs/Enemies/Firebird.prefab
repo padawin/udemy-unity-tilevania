@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114690763122417898}
   - component: {fileID: 114570472029489752}
   - component: {fileID: 114563152533861734}
+  - component: {fileID: 114346846346115882}
   m_Layer: 8
   m_Name: Firebird
   m_TagString: Untagged
@@ -182,6 +183,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114346846346115882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1206891476116024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee34da9dd97e04c748ca38c3b798ec87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
 --- !u!114 &114443662033682168
 MonoBehaviour:
   m_ObjectHideFlags: 1
