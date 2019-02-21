@@ -208,8 +208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireProjectilePrefab: {fileID: 1052552241884360, guid: 076abccc2a85f473994ff28cc864a871,
     type: 2}
-  minTimeBetweenFireball: 0.2
-  maxTimeBetweenFireball: 1.2
+  minTimeBetweenFireball: 0.1
+  maxTimeBetweenFireball: 0.4
   minFireballDistance: {x: 1, y: 3}
   maxFireballDistance: {x: 3.7, y: 6}
 --- !u!114 &114543167883096032
@@ -226,11 +226,11 @@ MonoBehaviour:
   fireProjectileSpawner: {fileID: 114443662033682168}
   target: {fileID: 0}
   speedAppears: 30
-  speedToPlayer: 10
+  speedToPlayer: 15
   direction: -1
   timeBeforeFire: 1
-  timeToCoolDown: 1.5
-  timeFiring: 7
+  timeToCoolDown: 0.5
+  timeFiring: 4
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
