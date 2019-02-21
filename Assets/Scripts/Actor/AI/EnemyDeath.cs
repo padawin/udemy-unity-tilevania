@@ -28,7 +28,9 @@ public class EnemyDeath : Observable {
 			if (dd == null) {
 				dd = GetComponentInChildren<DamageDealer>();
 			}
-			dd.deactivate();
+			if (dd != null) {
+				dd.deactivate();
+			}
 			Destroy(gameObject);
 		}
 	}
