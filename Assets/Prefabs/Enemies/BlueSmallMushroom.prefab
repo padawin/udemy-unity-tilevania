@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 114689415560752250}
   - component: {fileID: 114900637471730952}
   - component: {fileID: 114651144806861142}
+  - component: {fileID: 114049317758448252}
   m_Layer: 8
   m_Name: BlueSmallMushroom
   m_TagString: Untagged
@@ -128,6 +129,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114049317758448252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1526097371075106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee34da9dd97e04c748ca38c3b798ec87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
 --- !u!114 &114651144806861142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,6 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3417a2d5f27fb4dc492593f813eac2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  observers: []
 --- !u!114 &114704562308763466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fce47c3501034d6e9dda8798e17728d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  observers: []
   damages: 5
 --- !u!114 &114894563306057646
 MonoBehaviour:
