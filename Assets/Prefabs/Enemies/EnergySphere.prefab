@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114053236575629894}
   - component: {fileID: 114380273731339842}
   - component: {fileID: 114359527389243722}
+  - component: {fileID: 114443296144338888}
   m_Layer: 8
   m_Name: EnergySphere
   m_TagString: Untagged
@@ -148,6 +149,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthInitial: 10
   invincibilityDuration: 0
+--- !u!114 &114443296144338888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1763077827366106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee34da9dd97e04c748ca38c3b798ec87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
 --- !u!212 &212228031269606710
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -45,6 +45,7 @@ public class GameSession : MonoBehaviour {
 
 	public void load() {
 		disableBonusesFromScene();
+		saveableObjects = new HashSet<string>();
 		if (PlayerPrefs.HasKey("PlayerBonuses")) {
 			string b = PlayerPrefs.GetString("PlayerBonuses");
 			string[] bonuses = b.Split(',');

@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 114102829377781744}
   - component: {fileID: 114857446704591904}
   - component: {fileID: 114248478464842328}
+  - component: {fileID: 114821139084173306}
   m_Layer: 8
   m_Name: Skeleton
   m_TagString: Untagged
@@ -301,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3417a2d5f27fb4dc492593f813eac2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  observers: []
 --- !u!114 &114614212239401450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -312,6 +314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fce47c3501034d6e9dda8798e17728d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  observers: []
   damages: 15
 --- !u!114 &114647772339282718
 MonoBehaviour:
@@ -324,6 +327,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1125ce152bab498ab9d4867dfe55a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114821139084173306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590702352838028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee34da9dd97e04c748ca38c3b798ec87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
 --- !u!114 &114857446704591904
 MonoBehaviour:
   m_ObjectHideFlags: 1
