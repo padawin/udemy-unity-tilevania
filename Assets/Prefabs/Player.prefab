@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 114862319991232726}
   - component: {fileID: 114761581734502462}
   - component: {fileID: 114585464572448612}
+  - component: {fileID: 114409600657552764}
   m_Layer: 11
   m_Name: Player
   m_TagString: Untagged
@@ -271,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fce47c3501034d6e9dda8798e17728d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  observers: []
   damages: 30
 --- !u!114 &114126525686354612
 MonoBehaviour:
@@ -285,6 +287,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthInitial: 100
   invincibilityDuration: 1
+--- !u!114 &114409600657552764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737894317023786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3e7f507ab4c4cc7ab5797f32f4a620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMana: 100
 --- !u!114 &114550563513197058
 MonoBehaviour:
   m_ObjectHideFlags: 1
