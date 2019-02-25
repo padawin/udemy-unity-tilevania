@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour {
+	SceneLoader sceneLoader;
+	GameSession gameSession;
+
+	// Use this for initialization
 	void Start () {
-		GameSession gameSession = FindObjectOfType<GameSession>();
-		gameSession.clearSave();
-		Destroy(gameObject);
+		sceneLoader = FindObjectOfType<SceneLoader>();
+		gameSession = FindObjectOfType<GameSession>();
+	}
+
+	public void loadGame() {
+		sceneLoader.loadScene(gameSession.getCurrentLevelIndex());
 	}
 }

@@ -7,7 +7,9 @@ public class Level : MonoBehaviour {
 
 	void Start () {
 		GameSession gameSession = FindObjectOfType<GameSession>();
+		SceneLoader sceneLoader = FindObjectOfType<SceneLoader>();
 		gameSession.load();
+		gameSession.saveCurrentLevelIndex(sceneLoader.getSceneIndex());
 		// delete objects marked as to be deleted
 		Vector2? playerposition = gameSession.getPlayerPosition();
 		if (playerposition != null) {

@@ -18,14 +18,18 @@ public class SceneLoader : MonoBehaviour {
 		}
 	}
 
+	public int getSceneIndex() {
+		return SceneManager.GetActiveScene().buildIndex;
+	}
+
 	private void _loadScene(int index) {
-		lastLoadedSceneIndex = SceneManager.GetActiveScene().buildIndex;
+		lastLoadedSceneIndex = getSceneIndex();
 		SceneManager.LoadScene(index);
 	}
 
 
 	public void loadNextScene() {
-		int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+		int currentSceneIndex = getSceneIndex();
 		_loadScene(currentSceneIndex + 1);
 	}
 
@@ -46,7 +50,7 @@ public class SceneLoader : MonoBehaviour {
 			StartCoroutine(loadDelayedScene(name, delay));
 		}
 		else {
-			lastLoadedSceneIndex = SceneManager.GetActiveScene().buildIndex;
+			lastLoadedSceneIndex = getSceneIndex();
 			SceneManager.LoadScene(name);
 		}
 	}
