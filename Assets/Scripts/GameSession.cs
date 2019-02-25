@@ -43,6 +43,10 @@ public class GameSession : MonoBehaviour {
 		PlayerPrefs.Save();
 	}
 
+	public void saveCurrentLevelIndex(int index) {
+		PlayerPrefs.SetInt("Level", index);
+	}
+
 	public void load() {
 		disableBonusesFromScene();
 		saveableObjects = new HashSet<string>();
@@ -55,6 +59,10 @@ public class GameSession : MonoBehaviour {
 			string[] objects = PlayerPrefs.GetString("SaveableObjects").Split(',');
 			saveableObjects = new HashSet<string>(objects);
 		}
+	}
+
+	public int getCurrentLevelIndex() {
+		return PlayerPrefs.GetInt("Level");
 	}
 
 	private void saveBonuses() {
