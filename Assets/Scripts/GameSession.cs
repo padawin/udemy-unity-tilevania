@@ -43,6 +43,10 @@ public class GameSession : MonoBehaviour {
 		PlayerPrefs.Save();
 	}
 
+	public bool hasSavedLevel() {
+		return PlayerPrefs.HasKey("Level");
+	}
+
 	public void saveCurrentLevelIndex(int index) {
 		PlayerPrefs.SetInt("Level", index);
 	}
