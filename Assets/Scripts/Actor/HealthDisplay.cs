@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealthDisplay : Observer {
+public class HealthDisplay : Observer {
 	[SerializeField] ActorHealth playerHealth;
 	[SerializeField] float widthMaxHealth;
 
