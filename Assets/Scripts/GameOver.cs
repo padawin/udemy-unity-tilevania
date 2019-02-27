@@ -12,9 +12,7 @@ public class GameOver : MonoBehaviour {
 		gameSession = FindObjectOfType<GameSession>();
 	}
 
-	void Update() {
-		if (Input.GetButtonDown("Submit")) {
-			sceneLoader.loadScene(gameSession.getCurrentLevelIndex());
-		}
+	public void retry() {
+		sceneLoader.loadScene(gameSession.getCurrentLevelIndex());
 	}
 }
