@@ -36,10 +36,11 @@ public class GameSession : MonoBehaviour {
 		}
 	}
 
-	public void save(Vector2 position) {
+	public void save(Vector2 playerPosition, int playerHealth) {
 		saveBonuses();
 		saveObjects();
-		savePlayerPosition(position);
+		savePlayerPosition(playerPosition);
+		savePlayerHealth(playerHealth);
 		PlayerPrefs.Save();
 	}
 
@@ -99,6 +100,10 @@ public class GameSession : MonoBehaviour {
 	private void savePlayerPosition(Vector2 position) {
 		PlayerPrefs.SetFloat("PlayerX", position.x);
 		PlayerPrefs.SetFloat("PlayerY", position.y);
+	}
+
+	private void savePlayerHealth(int health) {
+		PlayerPrefs.SetInt("PlayerHealth", health);
 	}
 
 	public Vector2? getPlayerPosition() {

@@ -14,6 +14,8 @@ public class Checkpoint : MonoBehaviour {
 
 	public void save() {
 		GameSession gameSession = FindObjectOfType<GameSession>();
-		gameSession.save(player.transform.position);
+		gameSession.save(
+			player.transform.position, player.GetComponent<ActorHealth>().getHealth()
+		);
 	}
 }
