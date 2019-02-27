@@ -12,7 +12,7 @@ public class ActorHealth : Observable {
 
 	HitResponse hitResponse;
 
-	void Start() {
+	void Awake() {
 		hitResponse = GetComponent<HitResponse>();
 		maxHealth = maxHealthInitial;
 		restore();
