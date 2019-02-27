@@ -12,42 +12,19 @@ public class ActorHealth : Observable {
 
 	HitResponse hitResponse;
 
-	void Start() {
+	void Awake() {
 		hitResponse = GetComponent<HitResponse>();
-		initMaxHealth();
+		maxHealth = maxHealthInitial;
 		restore();
-	}
-
-	void initMaxHealth() {
-		if (maxHealth == 0) {
-			maxHealth = maxHealthInitial;
-		}
 	}
 
 	public void setHealth(int newHealth) {
 		health = newHealth;
-		initMaxHealth();
 		notify();
 	}
 
-	public void setMaxHealth(int extra) {
-		maxHealth = maxHealthInitial + extra;
-	}
-
-	public int getMaxHealthExtra() {
-		return maxHealth - maxHealthInitial;
-	}
-
-	public void restore() {
+	void restore() {
 		health = maxHealth;
-	}
-
-	public void increaseHealth(int val) {
-		health += val;
-	}
-
-	public void increaseMaxHealth(int val) {
-		maxHealth += val;
 	}
 
 	public void hit(DamageDealer damageDealer) {
