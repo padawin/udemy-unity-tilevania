@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 61430483011441382}
   - component: {fileID: 114522432887977708}
   m_Layer: 14
-  m_Name: BossAppearance
+  m_Name: BossActivator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063874576385916}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 54.57, y: -22.9961, z: 0.113048516}
+  m_LocalPosition: {x: 63.5, y: -63.8, z: 0.113048516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,7 +53,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.4714699, y: 1.531496}
+  m_Offset: {x: -0.5232811, y: 3.349117}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -64,7 +64,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.013969, y: 7.033169}
+  m_Size: {x: 4.139793, y: 10.96364}
   m_EdgeRadius: 0
 --- !u!114 &114522432887977708
 MonoBehaviour:
@@ -78,5 +78,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   observers:
-  - {fileID: 0}
   - {fileID: 0}
