@@ -24,6 +24,12 @@ public class ActorHealth : Observable {
 		}
 	}
 
+	public void setHealth(int newHealth) {
+		health = newHealth;
+		initMaxHealth();
+		notify();
+	}
+
 	public void setMaxHealth(int extra) {
 		maxHealth = maxHealthInitial + extra;
 	}
