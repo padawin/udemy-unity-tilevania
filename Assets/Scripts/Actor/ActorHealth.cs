@@ -14,10 +14,14 @@ public class ActorHealth : Observable {
 
 	void Start() {
 		hitResponse = GetComponent<HitResponse>();
+		initMaxHealth();
+		restore();
+	}
+
+	void initMaxHealth() {
 		if (maxHealth == 0) {
 			maxHealth = maxHealthInitial;
 		}
-		restore();
 	}
 
 	public void setMaxHealth(int extra) {
