@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ActorHealth : MonoBehaviour {
+public class ActorHealth : Observable {
 	[SerializeField] int maxHealthInitial = 100;
 	[SerializeField] float invincibilityDuration = 0f;
 
@@ -46,6 +46,7 @@ public class ActorHealth : MonoBehaviour {
 		if (hitResponse != null) {
 			hitResponse.run(damageDealer.gameObject);
 		}
+		notify();
 	}
 
 	public int getHealth() {
