@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4338093203898772}
   - component: {fileID: 61430483011441382}
-  - component: {fileID: 114069837076223288}
+  - component: {fileID: 114522432887977708}
   m_Layer: 14
   m_Name: BossAppearance
   m_TagString: Untagged
@@ -53,7 +53,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.603302, y: 1.531496}
+  m_Offset: {x: -2.4714699, y: 1.531496}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -64,9 +64,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.332558, y: 7.033169}
+  m_Size: {x: 9.013969, y: 7.033169}
   m_EdgeRadius: 0
---- !u!114 &114069837076223288
+--- !u!114 &114522432887977708
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,9 +74,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1063874576385916}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87ca93c6f47114048ad072de8d3379a9, type: 3}
+  m_Script: {fileID: 11500000, guid: 573875ba92cc5400c8008a8a32996445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
+  observers:
   - {fileID: 0}
   - {fileID: 0}

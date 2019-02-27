@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 70502386119783668}
   - component: {fileID: 50945776977435608}
   - component: {fileID: 114647772339282718}
+  - component: {fileID: 114239472275779706}
   - component: {fileID: 114746155586680180}
   - component: {fileID: 95837421067346024}
   - component: {fileID: 114459304123389332}
@@ -239,6 +240,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114239472275779706
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590702352838028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdcaa4ef153e3482ba1403e221e8b2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114305554546414720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8003f04079a4d4996037e56306f46c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  observers: []
   maxHealthInitial: 650
   invincibilityDuration: 1
 --- !u!114 &114437849757191200
