@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthDisplay : Observer {
-	[SerializeField] ActorHealth playerHealth;
-	[SerializeField] float widthMaxHealth;
+	[SerializeField] ActorHealth actorHealth;
 
 	void Start() {
 		updateWidth();
@@ -15,7 +14,7 @@ public class HealthDisplay : Observer {
 	}
 
 	void updateWidth() {
-		float healthRatio = playerHealth.getHealth() / (float) playerHealth.getMaxHealth();
+		float healthRatio = actorHealth.getHealth() / (float) actorHealth.getMaxHealth();
 		transform.localScale = new Vector2(healthRatio, transform.localScale.y);
 	}
 }

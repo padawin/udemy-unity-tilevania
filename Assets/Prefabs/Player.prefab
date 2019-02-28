@@ -407,8 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c3ece06102cd4373b0038fa48efbd4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 114126525686354612}
-  widthMaxHealth: 478.3
+  actorHealth: {fileID: 114126525686354612}
 --- !u!114 &114502797211939684
 MonoBehaviour:
   m_ObjectHideFlags: 1
