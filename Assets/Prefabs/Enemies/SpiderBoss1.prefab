@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 50287768936555170}
   - component: {fileID: 95214629934298240}
   - component: {fileID: 114255200839494030}
+  - component: {fileID: 114871762965535160}
   - component: {fileID: 114538574578339474}
   - component: {fileID: 114088783814764144}
   - component: {fileID: 114928772464857004}
@@ -188,8 +189,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8003f04079a4d4996037e56306f46c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  observers: []
   maxHealthInitial: 400
   invincibilityDuration: 1
+--- !u!114 &114871762965535160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1718103067635468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdcaa4ef153e3482ba1403e221e8b2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114928772464857004
 MonoBehaviour:
   m_ObjectHideFlags: 1

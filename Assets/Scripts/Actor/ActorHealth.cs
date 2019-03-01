@@ -29,6 +29,9 @@ public class ActorHealth : Observable {
 
 	public void hit(DamageDealer damageDealer) {
 		health -= damageDealer.getDamages();
+		if (health < 0) {
+			health = 0;
+		}
 		timeSinceLastHit = Time.realtimeSinceStartup;
 		if (hitResponse != null) {
 			hitResponse.run(damageDealer.gameObject);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 enum BirdState {STANDBY, GO, PREPARE_FIRE, FIRE, COOL_DOWN, FIND_PLAYER};
 
-public class Firebird : Observer {
+public class Firebird : Boss {
 	[SerializeField] FireProjectileSpawner fireProjectileSpawner;
 	[SerializeField] GameObject target;
 	[SerializeField] float speedAppears;
@@ -44,6 +44,10 @@ public class Firebird : Observer {
 	}
 
 	void Update() {
+		if (!player) {
+			return;
+		}
+
 		if (state == BirdState.GO) {
 			goToTarget(speed);
 			if (reachedDestination()) {
