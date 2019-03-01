@@ -44,6 +44,10 @@ public class Firebird : Boss {
 	}
 
 	void Update() {
+		if (!player) {
+			return;
+		}
+
 		if (state == BirdState.GO) {
 			goToTarget(speed);
 			if (reachedDestination()) {
