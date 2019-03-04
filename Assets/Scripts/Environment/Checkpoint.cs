@@ -8,7 +8,6 @@ public class Checkpoint : MonoBehaviour {
 
 	void OnTriggerEnter2D() {
 		save();
-		notification.show("GAME SAVED");
 		Destroy(gameObject);
 	}
 
@@ -17,5 +16,6 @@ public class Checkpoint : MonoBehaviour {
 		gameSession.save(
 			player.transform.position, player.GetComponent<ActorHealth>().getHealth()
 		);
+		notification.show("GAME SAVED");
 	}
 }
