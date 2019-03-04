@@ -16,12 +16,15 @@ public class Activator : MonoBehaviour {
 		}
 	}
 
-	void toggle () {
+	public void toggle () {
 		foreach (var activator in activatorsStates) {
 			activator.SetActive(!activator.activeSelf);
 		}
 		foreach (var observer in observers) {
 			observer.activate();
+		}
+		if (!infiniteUse) {
+			canUse = false;
 		}
 	}
 
@@ -40,9 +43,7 @@ public class Activator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (canUse && playerTouches && Input.GetButtonDown("Submit")) {
-			if (!infiniteUse) {
-				canUse = false;
-			}
+			GetComponent<Saveable>().save();
 			toggle();
 		}
 	}

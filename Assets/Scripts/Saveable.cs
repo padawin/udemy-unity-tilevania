@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum SaveableType {ACTIVATE, DEACTIVATE, DESTROY};
+enum SaveableType {ACTIVATE, DEACTIVATE, DESTROY, TOGGLE};
 
 public class Saveable : MonoBehaviour {
 	[SerializeField] SaveableType type;
@@ -11,6 +11,9 @@ public class Saveable : MonoBehaviour {
 	string guid;
 
 	public void save() {
+		if (gameSession == null) {
+			gameSession = FindObjectOfType<GameSession>();
+		}
 		gameSession.saveSaveable(guid);
 	}
 
@@ -27,6 +30,9 @@ public class Saveable : MonoBehaviour {
 					break;
 				case SaveableType.DESTROY:
 					Destroy(gameObject);
+					break;
+				case SaveableType.TOGGLE:
+					GetComponent<Activator>().toggle();
 					break;
 			}
 		}
