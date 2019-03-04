@@ -13,7 +13,7 @@ public class InteractText : Observable {
 	Grid myGrid;
 	int currentPage = 0;
 
-	void Start () {
+	void Awake() {
 		myCanvas = GetComponentInChildren<Canvas>();
 		myGrid = GetComponentInChildren<Grid>();
 		hide();
