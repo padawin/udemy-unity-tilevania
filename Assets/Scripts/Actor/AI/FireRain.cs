@@ -69,6 +69,7 @@ public class FireRain : MonoBehaviour {
 		yield return new WaitUntil(
 			() => allFireballsDestroyed()
 		);
+		fireballs.Clear();
 		evilLord.setIdle();
 	}
 
