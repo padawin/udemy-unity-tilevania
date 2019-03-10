@@ -15,9 +15,6 @@ public class FallingSpikes : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D collider) {
-		if (collider.gameObject.name == "Player") {
-			Debug.Log("Damage");
-		}
 		Destroy(gameObject, timeBeforeDestroy);
 	}
 }
