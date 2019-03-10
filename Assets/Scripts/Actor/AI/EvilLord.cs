@@ -1,0 +1,67 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+enum EvilLordState {Idle, PickAttack, Fireball, Dash};
+
+public class EvilLord : Observer {
+	[SerializeField] float minTimeBeforeAttack = 0;
+	[SerializeField] float maxTimeBeforeAttack = 0;
+	[SerializeField] Player player;
+
+	EvilLordState state = EvilLordState.Idle;
+	bool active = false;
+
+	Slice slice;
+	FireRain fireRain;
+
+	override public void notify() {
+		active = true;
+	}
+	void Start () {
+		slice = GetComponent<Slice>();
+		fireRain = GetComponent<FireRain>();
+	}
+
+	void Update () {
+		if (!active) {
+			return;
+		}
+
+		if (state == EvilLordState.Idle) {
+			state = EvilLordState.PickAttack;
+			StartCoroutine(preparePickingAttack());
+		}
+	}
+
+	IEnumerator preparePickingAttack() {
+		float timeBeforeAttack = Random.Range(
+			minTimeBeforeAttack, maxTimeBeforeAttack
+		);
+		yield return new WaitForSeconds(timeBeforeAttack);
+		attack();
+	}
+
+	void attack() {
+		float proba = Random.Range(0, 100);
+		if (proba < 50) {
+			throwFireballs();
+		}
+		else {
+			throwFireballs();
+			// dash();
+		}
+	}
+
+	void throwFireballs() {
+		fireRain.fire();
+	}
+
+	void dash() {
+		slice.slice();
+	}
+
+	public void setIdle() {
+		state = EvilLordState.Idle;
+	}
+}
