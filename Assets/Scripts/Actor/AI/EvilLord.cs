@@ -48,8 +48,7 @@ public class EvilLord : Observer {
 			throwFireballs();
 		}
 		else {
-			throwFireballs();
-			// dash();
+			sliceAttack();
 		}
 	}
 
@@ -57,7 +56,7 @@ public class EvilLord : Observer {
 		fireRain.fire();
 	}
 
-	void dash() {
+	void sliceAttack() {
 		slice.slice();
 	}
 
