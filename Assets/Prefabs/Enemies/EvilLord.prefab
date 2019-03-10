@@ -20,13 +20,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4234431733073280}
   - component: {fileID: 212332099405537960}
+  - component: {fileID: 95316994593405212}
   - component: {fileID: 114985517941178240}
   - component: {fileID: 61392447109917370}
   - component: {fileID: 70351051344232652}
   - component: {fileID: 50346812199751136}
   - component: {fileID: 114910857099685972}
-  - component: {fileID: 114213805801450682}
   - component: {fileID: 114185451176840154}
+  - component: {fileID: 114422483950590676}
   - component: {fileID: 114273295823571200}
   - component: {fileID: 114194809088359604}
   - component: {fileID: 114359671571903414}
@@ -62,7 +63,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -83,7 +84,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.27831268, y: -0.60881615}
+  m_Offset: {x: 0.34562007, y: -0.60881615}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -94,7 +95,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1650543, y: 0.7823677}
+  m_Size: {x: 1.0304396, y: 0.7823677}
   m_EdgeRadius: 0
 --- !u!70 &70351051344232652
 CapsuleCollider2D:
@@ -111,6 +112,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0.33049774, y: 0.10436821}
   m_Size: {x: 1.2346344, y: 1.7912636}
   m_Direction: 0
+--- !u!95 &95316994593405212
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1402807177365662}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a655a7d18bd7f4967a706a63a0a39053, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114185451176840154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -122,8 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8003f04079a4d4996037e56306f46c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  observers: []
-  maxHealthInitial: 2000
+  observers:
+  - {fileID: 0}
+  maxHealthInitial: 4000
   invincibilityDuration: 0
 --- !u!114 &114194809088359604
 MonoBehaviour:
@@ -138,20 +158,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minTimeBeforeAttack: 1
   maxTimeBeforeAttack: 2
-  player: {fileID: 0}
---- !u!114 &114213805801450682
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1402807177365662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fce47c3501034d6e9dda8798e17728d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  observers: []
-  damages: 50
 --- !u!114 &114273295823571200
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -175,6 +181,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959463b434fc3482ba496f39fcd6f6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeShaking: 2
+  lightningPrefab: {fileID: 0}
+--- !u!114 &114422483950590676
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1402807177365662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbbd1f81a39a2497098ab99fba5d13b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitProjection: {x: 0, y: 0}
 --- !u!114 &114604764238924522
 MonoBehaviour:
   m_ObjectHideFlags: 1

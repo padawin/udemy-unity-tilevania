@@ -7,7 +7,6 @@ enum EvilLordState {Idle, PickAttack, Fireball, Dash};
 public class EvilLord : Observer {
 	[SerializeField] float minTimeBeforeAttack = 0;
 	[SerializeField] float maxTimeBeforeAttack = 0;
-	[SerializeField] Player player;
 
 	EvilLordState state = EvilLordState.Idle;
 	bool active = false;
