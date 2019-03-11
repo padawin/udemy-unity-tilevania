@@ -5,15 +5,19 @@ using UnityEngine;
 enum SliceState {Idle, Shake, Move};
 
 public class Slice : MonoBehaviour {
+	[SerializeField] float defaultDirection = -1f;
 	[SerializeField] float timeShaking = 0;
+	[SerializeField] float minX = 0;
+	[SerializeField] float maxX = 0;
 	[SerializeField] Lightning lightningPrefab;
+	[SerializeField] Player player;
 	float speed = 0.1f; // How fast it shakes
 	float amount = 0.3f; // How much it shakes
 
 	SliceState state = SliceState.Idle;
-	bool active = false;
 	Vector3 originalPosition;
 	Lightning lightning;
+	float destinationX;
 
 	EvilLord evilLord;
 
@@ -24,8 +28,29 @@ public class Slice : MonoBehaviour {
 	public void slice() {
 		originalPosition = transform.position;
 		state = SliceState.Shake;
+		setDestination();
+		updateDirection();
 		StartCoroutine(move());
 
+	}
+
+	void setDestination() {
+		if (player.transform.position.x < transform.position.x) {
+			destinationX = Random.Range(minX, player.transform.position.x);
+		}
+		else {
+			destinationX = Random.Range(player.transform.position.x, maxX);
+		}
+	}
+
+	void updateDirection() {
+		float spriteDirection = Mathf.Sign(
+			player.transform.position.x - transform.position.x
+		);
+		transform.localScale = new Vector2(
+			Mathf.Abs(transform.localScale.x) * spriteDirection * defaultDirection,
+			transform.localScale.y
+		);
 	}
 
 	void Update() {
@@ -51,10 +76,11 @@ public class Slice : MonoBehaviour {
 	IEnumerator move() {
 		yield return new WaitForSeconds(timeShaking);
 		state = SliceState.Move;
-		// Find place to go to on the other side of the player
-		// Move there
 		// Instantiate Lightning
-		// Lightning lightning = Instantiate(lightningPrefab, transform.position, Quaternion.identity);
-		// lightning.setDestination();
+		lightning = Instantiate(
+			lightningPrefab, transform.position, Quaternion.identity
+		);
+		transform.position = new Vector2(destinationX, transform.position.y);
+		lightning.setDestination(transform.position);
 	}
 }

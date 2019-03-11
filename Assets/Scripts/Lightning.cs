@@ -7,7 +7,6 @@ public class Lightning : MonoBehaviour {
 	[SerializeField] float growthSpeed = 0.1f;
 	[SerializeField] float timeBeforeShrink = 1f;
 
-	[SerializeField] Vector2 tmpDestination;
 	Vector2 initialPosition;
 	float direction;
 	float maxLength;
@@ -22,13 +21,12 @@ public class Lightning : MonoBehaviour {
 		myRenderer = GetComponent<SpriteRenderer>();
 		myCollider.size = new Vector2(0f, myCollider.size.y);
 		myRenderer.size = new Vector2(0f, myRenderer.size.y);
-		initialPosition = transform.position;
-		setDestination(tmpDestination);
 	}
 
 	public void setDestination(Vector2 destination) {
-		maxLength = Mathf.Abs(destination.x - initialPosition.x);
-		direction = Mathf.Sign(destination.x - initialPosition.x);
+		initialPosition = transform.position;
+		maxLength = Mathf.Abs(destination.x - transform.position.x);
+		direction = Mathf.Sign(destination.x - transform.position.x);
 	}
 
 	// Update is called once per frame
