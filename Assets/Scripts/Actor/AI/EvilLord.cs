@@ -14,10 +14,15 @@ public class EvilLord : Observer {
 	Slice slice;
 	FireRain fireRain;
 
+	ActorHealth actorHealth;
+
 	override public void notify() {
 		active = true;
+		actorHealth.setActive(true);
 	}
 	void Start () {
+		actorHealth = GetComponent<ActorHealth>();
+		actorHealth.setActive(false);
 		slice = GetComponent<Slice>();
 		fireRain = GetComponent<FireRain>();
 	}

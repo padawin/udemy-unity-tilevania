@@ -10,12 +10,18 @@ public class ActorHealth : Observable {
 	int health;
 	float timeSinceLastHit = 0f;
 
+	bool active = true;
+
 	HitResponse hitResponse;
 
 	void Awake() {
 		hitResponse = GetComponent<HitResponse>();
 		maxHealth = maxHealthInitial;
 		restore();
+	}
+
+	public void setActive(bool a) {
+		active = a;
 	}
 
 	public void setHealth(int newHealth) {
@@ -48,6 +54,6 @@ public class ActorHealth : Observable {
 	}
 
 	public bool canBeHit() {
-		return Time.realtimeSinceStartup - timeSinceLastHit >= invincibilityDuration;
+		return active && Time.realtimeSinceStartup - timeSinceLastHit >= invincibilityDuration;
 	}
 }
