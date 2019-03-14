@@ -6,6 +6,8 @@ public class GameSession : MonoBehaviour {
 	HashSet<string> playerBonuses;
 	HashSet<string> saveableObjects;
 
+	EndGameOutcome outcome;
+
 	void Awake () {
 		playerBonuses = new HashSet<string>();
 		saveableObjects = new HashSet<string>();
@@ -132,5 +134,13 @@ public class GameSession : MonoBehaviour {
 		PlayerPrefs.DeleteKey("PlayerY");
 		PlayerPrefs.DeleteKey("SaveableObjects");
 		PlayerPrefs.Save();
+	}
+
+	public void setGameEnd(EndGameOutcome o) {
+		outcome = o;
+	}
+
+	public EndGameOutcome getGameEnd() {
+		return outcome;
 	}
 }
