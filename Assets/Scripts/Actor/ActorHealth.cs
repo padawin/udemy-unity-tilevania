@@ -5,12 +5,11 @@ using UnityEngine;
 public class ActorHealth : Observable {
 	[SerializeField] int maxHealthInitial = 100;
 	[SerializeField] float invincibilityDuration = 0f;
+	[SerializeField] bool active = true;
 
 	int maxHealth;
 	int health;
 	float timeSinceLastHit = 0f;
-
-	bool active = true;
 
 	HitResponse hitResponse;
 
