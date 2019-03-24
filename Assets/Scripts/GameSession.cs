@@ -54,7 +54,7 @@ public class GameSession : MonoBehaviour {
 		PlayerPrefs.SetInt("Level", index);
 	}
 
-	public void load(Player player) {
+	public void load() {
 		disableBonusesFromScene();
 		saveableObjects = new HashSet<string>();
 		if (PlayerPrefs.HasKey("PlayerBonuses")) {
@@ -66,7 +66,9 @@ public class GameSession : MonoBehaviour {
 			string[] objects = PlayerPrefs.GetString("SaveableObjects").Split(',');
 			saveableObjects = new HashSet<string>(objects);
 		}
+	}
 
+	public void loadPlayer(Player player) {
 		if (PlayerPrefs.HasKey("PlayerHealth")) {
 			player.GetComponent<ActorHealth>().setHealth(
 				PlayerPrefs.GetInt("PlayerHealth")

@@ -5,10 +5,10 @@ using UnityEngine;
 public class Level : MonoBehaviour {
 	[SerializeField] Player player;
 
-	void Start () {
+	void Start() {
 		GameSession gameSession = FindObjectOfType<GameSession>();
 		SceneLoader sceneLoader = FindObjectOfType<SceneLoader>();
-		gameSession.load(player);
+		gameSession.loadPlayer(player);
 		gameSession.saveCurrentLevelIndex(sceneLoader.getSceneIndex());
 		// delete objects marked as to be deleted
 		Vector2? playerposition = gameSession.getPlayerPosition();

@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour {
 	}
 
 	public void loadGame() {
+		gameSession.load();
 		sceneLoader.loadScene(gameSession.getCurrentLevelIndex());
 	}
 }
