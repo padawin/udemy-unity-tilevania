@@ -18,6 +18,7 @@ public class NextLevel : MonoBehaviour {
 			);
 			gameSession.clearLevel();
 			sceneLoader.loadNextScene();
+			collider.GetComponent<ActorHealth>().restore();
 		}
 	}
 }
