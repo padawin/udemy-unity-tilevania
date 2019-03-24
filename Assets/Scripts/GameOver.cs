@@ -13,6 +13,7 @@ public class GameOver : MonoBehaviour {
 	}
 
 	public void retry() {
+		gameSession.load();
 		sceneLoader.loadScene(gameSession.getCurrentLevelIndex());
 	}
 }
