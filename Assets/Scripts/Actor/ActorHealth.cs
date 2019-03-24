@@ -28,7 +28,7 @@ public class ActorHealth : Observable {
 		notify();
 	}
 
-	void restore() {
+	public void restore() {
 		health = maxHealth;
 	}
 
